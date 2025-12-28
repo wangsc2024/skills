@@ -1,0 +1,82 @@
+# Claude Code Skills 索引
+
+此索引幫助快速選擇正確的 Skill。
+
+## 🔧 開發流程
+
+| Skill | 觸發詞 | 用途 |
+|-------|--------|------|
+| **test-driven-development** | TDD, 測試驅動, 寫測試, unit test, pytest | 測試先行開發 |
+| **systematic-debugging** | debug, bug, error, 除錯, 錯誤, exception | 系統化除錯 |
+| **writing-plans** | 計畫, plan, 規劃, 步驟, 任務拆解 | 建立實作計畫 |
+| **executing-plans** | 執行計畫, follow plan, 按照計畫 | 執行實作計畫 |
+| **software-architect** | 架構, architecture, SOLID, design pattern | 架構設計 |
+| **code-reviewer** | review, 審查, PR review, 檢查程式碼 | 程式碼審查 |
+| **hardcode-detector** | hardcode, 寫死, magic number, secrets | 硬編碼檢測 |
+| **git-workflow** | git, commit, branch, merge, PR | Git 工作流程 |
+
+## 🎨 前端與設計
+
+| Skill | 觸發詞 | 用途 |
+|-------|--------|------|
+| **frontend-ui-tools** | React, component, 元件, Button, Modal, Form | React 元件生成 |
+| **frontend-design** | web design, UI設計, 網頁設計, landing page | 獨特前端設計 |
+| **ui-color-optimizer** | color, 配色, 顏色, dark mode, 對比度 | 配色優化 |
+| **theme-factory** | theme, 主題, 風格, style | 主題套用 |
+| **web-artifacts-builder** | shadcn, web app, 複雜應用, React專案 | 複雜前端應用 |
+
+## 🖼️ 視覺藝術
+
+| Skill | 觸發詞 | 用途 |
+|-------|--------|------|
+| **algorithmic-art** | p5.js, SVG, generative art, 生成藝術, fractal | 演算法藝術 |
+| **canvas-design** | poster, 海報, 視覺設計, artwork | 視覺設計作品 |
+
+## 📄 文件處理
+
+| Skill | 觸發詞 | 用途 |
+|-------|--------|------|
+| **docx** | Word, docx, 文件, 報告, 合約 | Word 文件 |
+| **pdf** | PDF, 合併PDF, OCR, 表單 | PDF 處理 |
+| **pptx** | PowerPoint, 簡報, slides, 投影片 | 簡報製作 |
+
+## 🛠️ 工具與整合
+
+| Skill | 觸發詞 | 用途 |
+|-------|--------|------|
+| **api-designer** | API, REST, endpoint, GraphQL, OpenAPI | API 設計 |
+| **mcp-builder** | MCP, Model Context Protocol, Claude擴展 | MCP Server |
+| **webapp-testing** | Playwright, E2E, 端對端測試, browser test | 網頁自動化測試 |
+
+## 📝 溝通與文件
+
+| Skill | 觸發詞 | 用途 |
+|-------|--------|------|
+| **internal-comms** | status report, 報告, 週報, incident report | 內部溝通 |
+| **skill-creator** | create skill, 建立skill, SKILL.md | Skill 建立 |
+
+---
+
+## 快速選擇指南
+
+### 我要寫新功能
+1. `writing-plans` → 建立計畫
+2. `test-driven-development` → TDD 實作
+3. `executing-plans` → 執行計畫
+
+### 我遇到 bug
+1. `systematic-debugging` → 系統化除錯
+
+### 我要審查程式碼
+1. `code-reviewer` → 品質/安全審查
+2. `hardcode-detector` → 硬編碼檢測
+
+### 我要建立 UI
+1. `frontend-ui-tools` → React 元件
+2. `ui-color-optimizer` → 配色
+3. `frontend-design` → 獨特設計
+
+### 我要處理文件
+1. `docx` → Word
+2. `pdf` → PDF
+3. `pptx` → PowerPoint
