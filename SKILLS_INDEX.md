@@ -67,6 +67,14 @@ Skills for building AI agents, LLM applications, and machine learning pipelines.
 
 ---
 
+## Testing & QA
+
+| Skill | Description | Pages | Command |
+|-------|-------------|-------|---------|
+| **[Puppeteer UI Testing](puppeteer-ui-testing.md)** | Front-end UI testing and optimization using Puppeteer - includes visual regression, performance analysis (Core Web Vitals), accessibility testing (axe-core), and responsive design testing | - | Local skill file |
+
+---
+
 ## Gaming & Economy
 
 | Skill | Description | Pages | Command |
