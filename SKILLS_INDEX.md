@@ -19,6 +19,16 @@ Skills for building AI agents, LLM applications, and machine learning pipelines.
 
 ---
 
+## AI News & Research
+
+Skills for tracking AI technology updates, research papers, and industry news.
+
+| Skill | Description | Sources | Command |
+|-------|-------------|---------|---------|
+| **[AI Tech Digest](ai-tech-digest.md)** | Daily aggregation of AI technology reports from Claude (Anthropic), OpenAI, and Gemini (Google). Includes model releases, API updates, research papers, and benchmark rankings | Official blogs, arXiv, HN, Reddit | `/ai-digest:fetch` `/ai-digest:report daily` |
+
+---
+
 ## Web Frameworks
 
 ### Frontend
@@ -155,6 +165,9 @@ skill-seekers unified --config configs/django_unified.json --merge-mode claude-e
 
 ### Fine-tuning LLMs
 - **Unsloth** - Fast fine-tuning with LoRA, RLHF, vision models
+
+### AI News & Research Tracking
+- **AI Tech Digest** - Daily reports on Claude, OpenAI, Gemini updates, research papers, and benchmarks
 
 ### Web Development
 - **React/Vue/Astro** - Frontend frameworks
