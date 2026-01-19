@@ -1,6 +1,9 @@
 ---
 name: react
-description: React framework for building user interfaces. Use for React components, hooks, state management, JSX, and modern frontend development.
+description: |
+  React framework for building user interfaces. Use for React components, hooks, state management, JSX, and modern frontend development.
+  Use when: working with React, creating components, managing state, handling side effects, building SPAs, or when user mentions React, component, 元件, hook, useState, useEffect, JSX, 前端開發, frontend.
+  Triggers: "React", "component", "元件", "hook", "useState", "useEffect", "useContext", "useRef", "JSX", "props", "state", "前端開發", "單頁應用", "SPA"
 ---
 
 # React Skill

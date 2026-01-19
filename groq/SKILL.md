@@ -1,6 +1,9 @@
 ---
 name: groq
-description: Groq API documentation for ultra-fast LLM inference. Use for chat completions, speech-to-text (Whisper), text-to-speech, vision, tool use, and agentic AI with Groq Compound.
+description: |
+  Groq API documentation for ultra-fast LLM inference. Use for chat completions, speech-to-text (Whisper), text-to-speech, vision, tool use, and agentic AI with Groq Compound.
+  Use when: need ultra-low latency inference, implementing speech-to-text, building fast AI applications, using LPU hardware, or when user mentions Groq, Whisper, ultra-fast, LPU, 超快推理, low latency, Compound.
+  Triggers: "Groq", "Whisper", "ultra-fast", "LPU", "超快推理", "low latency", "Compound", "speech-to-text", "fast inference", "high TPS"
 ---
 
 # Groq AI Skill

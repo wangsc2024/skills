@@ -1,6 +1,9 @@
 ---
 name: learning-mastery
-description: 基於楊大輝《深度學習的技術》的五層學習框架（記、懂、網、拓、活），幫助使用者掌握高效學習方法。
+description: |
+  基於楊大輝《深度學習的技術》的五層學習框架（記、懂、網、拓、活），幫助使用者掌握高效學習方法。
+  Use when: improving learning efficiency, mastering new skills, implementing Feynman technique, spaced repetition, or when user mentions 學習方法, learning method, 費曼技巧, Feynman technique, 間隔複習, spaced repetition, Anki, 記憶, memory.
+  Triggers: "learning method", "學習方法", "Feynman technique", "費曼技巧", "spaced repetition", "間隔複習", "Anki", "memory", "記憶", "楊大輝", "深度學習的技術", "五層學習"
 version: 1.0.0
 author: Skill Seekers
 ---

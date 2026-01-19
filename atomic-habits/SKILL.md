@@ -1,6 +1,9 @@
 ---
 name: atomic-habits
-description: 《原子習慣》完整方法論。涵蓋 James Clear 的行為改變四大法則、習慣堆疊、兩分鐘法則、身份認同習慣、環境設計等核心技術。
+description: |
+  《原子習慣》完整方法論。涵蓋 James Clear 的行為改變四大法則、習慣堆疊、兩分鐘法則、身份認同習慣、環境設計等核心技術。
+  Use when: building habits, breaking bad habits, behavior change, designing environments for success, or when user mentions 習慣, 原子習慣, habit, James Clear, behavior change, 行為改變, 兩分鐘法則, two-minute rule, habit stacking.
+  Triggers: "habit", "習慣", "原子習慣", "Atomic Habits", "James Clear", "behavior change", "行為改變", "兩分鐘法則", "two-minute rule", "habit stacking", "identity", "environment design"
 ---
 
 # 原子習慣 Skill

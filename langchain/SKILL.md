@@ -1,6 +1,9 @@
 ---
 name: langchain
-description: LangChain is an open source framework for building AI agents with pre-built agent architecture and integrations for any model or tool. Use this skill when working with LLM applications, chains, agents, RAG pipelines, memory systems, tool integrations, and AI orchestration in Python.
+description: |
+  LangChain is an open source framework for building AI agents with pre-built agent architecture and integrations for any model or tool. Use this skill when working with LLM applications, chains, agents, RAG pipelines, memory systems, tool integrations, and AI orchestration in Python.
+  Use when: building LLM applications, creating AI agents, implementing RAG systems, managing conversation memory, tool calling, or when user mentions LangChain, LCEL, agent, chain, 代理, 鏈, RAG, prompt, LangGraph.
+  Triggers: "LangChain", "LCEL", "agent", "chain", "代理", "鏈", "RAG", "prompt template", "LangGraph", "memory", "tool calling", "AI orchestration"
 ---
 
 # Langchain Skill
