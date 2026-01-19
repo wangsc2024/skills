@@ -1,6 +1,9 @@
 ---
 name: deep-learning
-description: 深度學習核心技術。涵蓋 CNN、RNN、LSTM、Transformer 架構，以及 Dropout、Batch Normalization 等優化技術。
+description: |
+  深度學習核心技術。涵蓋 CNN、RNN、LSTM、Transformer 架構，以及 Dropout、Batch Normalization 等優化技術。
+  Use when: understanding deep learning architectures, implementing neural networks, optimizing models, or when user mentions CNN, RNN, LSTM, Transformer, 神經網路, 深度學習, neural network, Dropout, Batch Normalization.
+  Triggers: "CNN", "RNN", "LSTM", "Transformer", "神經網路", "深度學習", "neural network", "Dropout", "Batch Normalization", "卷積", "循環神經網路"
 ---
 
 # 深度學習技術 Skill

@@ -2,7 +2,8 @@
 
 此索引幫助快速選擇正確的 Skill，並提供組合使用建議與自動觸發規則。
 
-> **更新時間:** 2026-01-05
+> **更新時間:** 2026-01-15
+> **優化重點:** 強化觸發機制、補充使用指南、完善最佳實踐
 
 ---
 
@@ -282,6 +283,103 @@ Skills 會根據 description 中的關鍵字自動觸發。例如：
 - 提到 AutoGen 或 multi-agent 或 Swarm → 自動觸發 autogen skill
 - 提到 配色 或 WCAG 或 Material Design → 自動觸發 ui-color-optimizer skill
 - 提到 AI新聞 或 技術日報 → 自動觸發 ai-daily-report skill
+
+### 自動觸發原理
+
+Claude Code 系統會掃描 SKILL.md 的 `description` 欄位，當用戶的問題或任務包含 description 中提到的關鍵詞時，系統會自動建議或觸發對應的 skill。
+
+**最佳實踐：**
+- ✅ 在 description 中明確列出 "Use when:" 使用場景
+- ✅ 在 description 中明確列出 "Triggers:" 觸發關鍵詞
+- ✅ 同時包含中英文關鍵詞以支援跨語言觸發
+- ✅ 包含技術名詞、縮寫、常見別名（如 vLLM, inference serving, 推理部署）
+- ❌ 避免過於通用的詞彙（如 "code", "programming"）可能造成誤觸發
+
+**範例（卓越級 Description）：**
+```yaml
+---
+name: ui-color-optimizer
+description: |
+  Optimize UI color schemes for accessibility, aesthetics, and brand consistency. Generates harmonious color palettes, checks WCAG contrast ratios, and provides CSS/Tailwind variables.
+  Use when: designing color schemes, fixing contrast issues, creating dark mode, building design systems, or when user mentions 配色, color, 顏色, palette, dark mode, 深色模式, contrast, 對比度, WCAG.
+  Triggers: "color", "配色", "顏色", "palette", "dark mode", "深色模式", "對比度", "WCAG", "調色盤"
+---
+```
+
+---
+
+## ❓ 常見問題
+
+### Q1: 為什麼我的 Skill 沒有被自動觸發？
+
+**可能原因：**
+1. **Description 缺少關鍵觸發詞** - 檢查 description 是否包含用戶可能使用的詞彙
+2. **關鍵詞過於通用** - 如 "code", "programming" 等詞彙過於廣泛
+3. **缺少中英文雙語支援** - 用戶可能用中文或英文描述需求
+4. **沒有明確的 Triggers 區段** - 建議明確列出 "Triggers:" 觸發詞
+
+**解決方案：**
+```yaml
+# ❌ 不佳範例
+description: React framework for building user interfaces.
+
+# ✅ 優秀範例
+description: |
+  React framework for building user interfaces. Use for React components, hooks, state management, JSX, and modern frontend development.
+  Use when: working with React, creating components, managing state, or when user mentions React, component, 元件, hook, useState, useEffect, JSX.
+  Triggers: "React", "component", "元件", "hook", "useState", "useEffect", "JSX", "前端開發"
+```
+
+### Q2: 一個 Skill 應該涵蓋多廣的範圍？
+
+**原則：Single Responsibility Principle (SRP)**
+- ✅ 每個 skill 專注於特定領域或工具
+- ✅ langchain skill 專注於 LangChain 框架
+- ✅ vllm skill 專注於 vLLM 推理引擎
+- ❌ 避免創建過於寬泛的 "AI 開發" skill
+
+**例外：學習方法論 Skills**
+- atomic-habits, learning-mastery 等可以較為通用，因為它們是方法論而非技術工具
+
+### Q3: 如何決定是否需要 references/ 子目錄？
+
+**需要 references/ 的情況：**
+- 技術框架/函式庫文件（langchain, react, vllm）
+- 需要詳細 API 參考的工具
+- 包含大量範例程式碼的 skill
+
+**不需要 references/ 的情況：**
+- 方法論/最佳實踐 skills（atomic-habits, systematic-debugging）
+- 簡單工具或流程指引
+- 已有完整 instruction.md 的 skills
+
+### Q4: Instruction 檔案 vs SKILL.md，何時使用哪個？
+
+| 特性 | SKILL.md (必須) | instruction.md (選用) |
+|-----|----------------|---------------------|
+| **用途** | 定義 skill 元資料與觸發機制 | 提供詳細操作流程與範本 |
+| **長度** | 簡短（通常 < 100 行） | 可以很長（包含完整教學） |
+| **內容** | name, description, 快速參考 | 步驟式指引、範例、模板 |
+| **範例** | 所有 skills 都有 | autogen, tiptap, ui-color-optimizer |
+
+**建議：**
+- 簡單 skill：僅需 SKILL.md
+- 複雜流程：SKILL.md + instruction.md
+- 技術文件：SKILL.md + references/
+
+### Q5: 如何測試 Skill 是否正確觸發？
+
+**測試方法：**
+1. **手動測試** - 在對話中使用觸發詞，觀察 Claude Code 是否建議該 skill
+2. **檢查 description** - 確認 description 包含 "Use when:" 和 "Triggers:"
+3. **跨語言測試** - 分別用中文和英文觸發詞測試
+4. **邊界測試** - 測試相關但不應觸發的詞彙
+
+**範例測試案例（vllm skill）：**
+- ✅ "如何部署 vLLM 推理服務？" → 應觸發
+- ✅ "need high-throughput inference" → 應觸發
+- ✅ "PagedAttention 的原理" → 應觸發
+- ❌ "什麼是機器學習？" → 不應觸發
 
 ---
 

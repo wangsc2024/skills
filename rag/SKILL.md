@@ -1,6 +1,9 @@
 ---
 name: rag
-description: Retrieval-Augmented Generation (RAG) comprehensive guide. Use for building RAG systems, vector databases, embeddings, chunking strategies, hybrid search, reranking, and evaluation with RAGAS.
+description: |
+  Retrieval-Augmented Generation (RAG) comprehensive guide. Use for building RAG systems, vector databases, embeddings, chunking strategies, hybrid search, reranking, and evaluation with RAGAS.
+  Use when: building RAG systems, implementing vector search, managing embeddings, document chunking, knowledge retrieval, or when user mentions RAG, vector database, embeddings, retrieval, 向量資料庫, 檢索, RAGAS, semantic search.
+  Triggers: "RAG", "vector database", "embeddings", "retrieval", "向量資料庫", "檢索", "RAGAS", "semantic search", "chunking", "reranking", "knowledge base", "document retrieval"
 ---
 
 # RAG (Retrieval-Augmented Generation) Skill

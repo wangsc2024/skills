@@ -1,6 +1,9 @@
 ---
 name: mistral
-description: Mistral AI API and SDK documentation. Use for chat completions, vision, audio transcription, function calling, embeddings, fine-tuning, agents, and deploying Mistral models.
+description: |
+  Mistral AI API and SDK documentation. Use for chat completions, vision, audio transcription, function calling, embeddings, fine-tuning, agents, and deploying Mistral models.
+  Use when: working with Mistral AI models, implementing function calling, generating embeddings, vision tasks with Pixtral, or when user mentions Mistral, Pixtral, embeddings, function calling, 函數呼叫, agent API.
+  Triggers: "Mistral", "Pixtral", "embeddings", "function calling", "函數呼叫", "agent API", "Mistral Large", "fine-tuning", "vision model"
 ---
 
 # Mistral AI Skill

@@ -1,6 +1,9 @@
 ---
 name: vllm
-description: vLLM is a fast and easy-to-use library for LLM inference and serving. Use this skill when working with vLLM deployment, model serving, inference optimization, PagedAttention, continuous batching, tensor parallelism, or high-throughput LLM serving.
+description: |
+  vLLM is a fast and easy-to-use library for LLM inference and serving. Use this skill when working with vLLM deployment, model serving, inference optimization, PagedAttention, continuous batching, tensor parallelism, or high-throughput LLM serving.
+  Use when: deploying LLM inference services, optimizing throughput, implementing production LLM serving, distributed inference, or when user mentions vLLM, inference, serving, PagedAttention, 推理, 部署, tensor parallel, quantization, high-throughput.
+  Triggers: "vLLM", "inference", "serving", "PagedAttention", "推理", "部署", "tensor parallel", "continuous batching", "quantization", "high-throughput", "模型部署", "LLM serving"
 ---
 
 # Vllm Skill

@@ -1,6 +1,9 @@
 ---
 name: autogen
-description: AutoGen is Microsoft's open-source framework for building AI agents and multi-agent applications. Use this skill when working with conversational agents, multi-agent orchestration, AgentChat, group chats, human-in-the-loop workflows, and AI agent collaboration in Python.
+description: |
+  AutoGen is Microsoft's open-source framework for building AI agents and multi-agent applications. Use this skill when working with conversational agents, multi-agent orchestration, AgentChat, group chats, human-in-the-loop workflows, and AI agent collaboration in Python.
+  Use when: building multi-agent systems, creating collaborative AI workflows, implementing agent teams, orchestrating complex AI tasks, or when user mentions AutoGen, multi-agent, AgentChat, Swarm, MagenticOne, 多代理, team, group chat.
+  Triggers: "AutoGen", "multi-agent", "AgentChat", "Swarm", "MagenticOne", "多代理", "agent team", "group chat", "collaborative AI", "agent orchestration", "human-in-the-loop"
 ---
 
 # Autogen Skill

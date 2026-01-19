@@ -4,14 +4,7 @@ description: |
   透過 ntfy.sh 發送任務完成通知。當用戶說「完成後通知 xxx」、
   「做完通知 xxx」、「完成後提醒 xxx」時，xxx 即為 ntfy topic，
   任務完成後用 curl 發送通知到 ntfy.sh/xxx。
-triggers:
-  - "通知"
-  - "提醒"
-  - "notify"
-  - "完成後通知"
-  - "做完通知"
-  - "完成後提醒"
-  - "處理完提醒"
+  觸發關鍵字：通知、提醒、notify、完成後通知、做完通知、完成後提醒、處理完提醒
 ---
 
 # ntfy 通知 (ntfy Notification Skill)
@@ -43,33 +36,36 @@ triggers:
 - `完成後通知 + topic名稱`
 - `做完通知 + topic名稱`
 
-## 通知發送格式
+## 通知發送格式（跨平台）
 
-**使用 JSON 格式發送，完美支援中文標題與訊息，跨平台無亂碼問題。**
+**重要：使用 JSON 檔案方式發送，確保 Windows/macOS/Linux 都能正常運作。**
 
-### 基本格式
+### 標準流程（推薦）
 
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","message":"訊息內容"}' ntfy.sh
+**步驟 1：建立 JSON 檔案**
+
+```json
+{
+  "topic": "TOPIC",
+  "title": "任務完成",
+  "message": "訊息內容",
+  "tags": ["white_check_mark"]
+}
 ```
 
-### 成功通知
+**步驟 2：使用 curl 發送**
 
 ```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務完成","message":"Task summary here","tags":["white_check_mark"]}' ntfy.sh
+curl -H "Content-Type: application/json; charset=utf-8" -d @payload.json https://ntfy.sh
 ```
 
-### 失敗通知
+### 為什麼使用檔案方式？
 
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失敗","message":"Error description","priority":4,"tags":["x"]}' ntfy.sh
-```
-
-### 進度通知
-
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"進行中","message":"Progress: 50%","tags":["hourglass_flowing_sand"]}' ntfy.sh
-```
+| 環境 | 直接 JSON 字串 | 檔案方式 |
+|------|---------------|---------|
+| macOS/Linux | ✅ 正常 | ✅ 正常 |
+| Windows | ❌ 編碼問題 | ✅ 正常 |
+| 中文支援 | ⚠️ 可能亂碼 | ✅ 完美 |
 
 ## JSON 欄位說明
 
@@ -85,56 +81,142 @@ curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"進行中
 
 ## 完整範例
 
-### 範例 1: 建立專案
+### 範例 1: 成功通知
 
-**用戶指令：** 幫我建立 React 專案，做完通知 wangsc2025
-
-**完成後執行：**
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"wangsc2025","title":"任務完成","message":"React project created at ./my-react-app","tags":["white_check_mark"]}' ntfy.sh
+**JSON 檔案 (ntfy_success.json)：**
+```json
+{
+  "topic": "wangsc2025",
+  "title": "任務完成",
+  "message": "React project created at ./my-react-app",
+  "tags": ["white_check_mark"]
+}
 ```
 
-### 範例 2: 跑測試
-
-**成功：**
+**發送指令：**
 ```bash
-curl -H "Content-Type: application/json" -d '{"topic":"ci-alerts","title":"測試通過","message":"46 tests passed, 85% coverage","tags":["white_check_mark","test_tube"]}' ntfy.sh
+curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_success.json https://ntfy.sh
 ```
 
-**失敗：**
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"ci-alerts","title":"測試失敗","message":"3 tests failed","priority":4,"tags":["x","test_tube"]}' ntfy.sh
+### 範例 2: 失敗通知
+
+**JSON 檔案 (ntfy_fail.json)：**
+```json
+{
+  "topic": "ci-alerts",
+  "title": "測試失敗",
+  "message": "3 tests failed in test_auth.py",
+  "priority": 4,
+  "tags": ["x", "test_tube"]
+}
 ```
 
-### 範例 3: 部署
-
+**發送指令：**
 ```bash
-curl -H "Content-Type: application/json" -d '{"topic":"ops-team","title":"部署成功","message":"v2.1.0 deployed to production","tags":["rocket","white_check_mark"]}' ntfy.sh
+curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https://ntfy.sh
 ```
 
-## 進階用法
+### 範例 3: 測試通過
 
-### 帶連結
-
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"PR 已合併","message":"PR #123 merged","tags":["white_check_mark"],"click":"https://github.com/user/repo/pull/123"}' ntfy.sh
+**JSON 檔案 (ntfy_test.json)：**
+```json
+{
+  "topic": "ci-alerts",
+  "title": "測試通過",
+  "message": "46 tests passed, 85% coverage",
+  "tags": ["white_check_mark", "test_tube"]
+}
 ```
 
-### 延遲通知
+### 範例 4: 部署成功
 
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"提醒","message":"30 分鐘提醒","delay":"30m"}' ntfy.sh
+**JSON 檔案 (ntfy_deploy.json)：**
+```json
+{
+  "topic": "ops-team",
+  "title": "部署成功",
+  "message": "v2.1.0 deployed to production",
+  "tags": ["rocket", "white_check_mark"]
+}
 ```
 
-### 高優先級（緊急）
+### 範例 5: 帶連結
+
+**JSON 檔案 (ntfy_pr.json)：**
+```json
+{
+  "topic": "dev-team",
+  "title": "PR 已合併",
+  "message": "PR #123 merged to main",
+  "tags": ["white_check_mark"],
+  "click": "https://github.com/user/repo/pull/123"
+}
+```
+
+### 範例 6: 高優先級（緊急）
+
+**JSON 檔案 (ntfy_urgent.json)：**
+```json
+{
+  "topic": "ops-alerts",
+  "title": "緊急",
+  "message": "Server down! CPU usage 100%",
+  "priority": 5,
+  "tags": ["fire", "warning"]
+}
+```
+
+### 範例 7: 延遲通知
+
+**JSON 檔案 (ntfy_delay.json)：**
+```json
+{
+  "topic": "reminders",
+  "title": "提醒",
+  "message": "30 分鐘後記得休息",
+  "delay": "30m"
+}
+```
+
+## macOS/Linux 快捷方式
+
+在 macOS/Linux 環境下，也可以直接使用 JSON 字串（但仍建議檔案方式以確保一致性）：
 
 ```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"緊急","message":"Server down!","priority":5,"tags":["fire","warning"]}' ntfy.sh
+# 成功通知
+curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務完成","message":"描述","tags":["white_check_mark"]}' ntfy.sh
+
+# 失敗通知
+curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失敗","message":"描述","priority":4,"tags":["x"]}' ntfy.sh
+```
+
+## 實作流程（Claude 執行時）
+
+當用戶要求「完成後通知 xxx」時，Claude 應：
+
+1. **執行用戶要求的任務**
+2. **建立 JSON 檔案**（使用 Write 工具）
+3. **發送通知**（使用 Bash + curl）
+4. **刪除暫存檔案**（清理）
+
+**範例流程：**
+```python
+# 步驟 1: 建立 JSON 檔案
+# 使用 Write 工具寫入 ntfy_notify.json
+
+# 步驟 2: 發送通知
+# curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_notify.json https://ntfy.sh
+
+# 步驟 3: 清理暫存檔
+# rm ntfy_notify.json
 ```
 
 ## 重要規則
 
-**禁止使用附件功能**：發送通知時不要使用 `attach` 欄位，只發送純文字訊息。
+1. **禁止使用附件功能**：發送通知時不要使用 `attach` 欄位，只發送純文字訊息
+2. **必須使用 charset=utf-8**：確保中文正確顯示
+3. **必須使用 https://ntfy.sh**：完整 URL，不要只用 ntfy.sh
+4. **建議刪除暫存檔**：發送完成後清理 JSON 檔案
 
 ## 如何接收通知
 
@@ -166,17 +248,40 @@ Tags 會自動轉換為 emoji：
 | `chart` | 📊 | 報告 |
 | `tada` | 🎉 | 慶祝 |
 | `fire` | 🔥 | 緊急 |
+| `computer` | 💻 | 開發 |
+| `memo` | 📝 | 文件 |
 
-## 快速範本
+## 快速範本（JSON 檔案）
 
-**成功：**
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務完成","message":"DESCRIPTION","tags":["white_check_mark"]}' ntfy.sh
+**成功通知 (success.json)：**
+```json
+{
+  "topic": "TOPIC",
+  "title": "任務完成",
+  "message": "DESCRIPTION",
+  "tags": ["white_check_mark"]
+}
 ```
 
-**失敗：**
-```bash
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失敗","message":"DESCRIPTION","priority":4,"tags":["x"]}' ntfy.sh
+**失敗通知 (fail.json)：**
+```json
+{
+  "topic": "TOPIC",
+  "title": "任務失敗",
+  "message": "DESCRIPTION",
+  "priority": 4,
+  "tags": ["x"]
+}
+```
+
+**進度通知 (progress.json)：**
+```json
+{
+  "topic": "TOPIC",
+  "title": "進行中",
+  "message": "Progress: 50%",
+  "tags": ["hourglass_flowing_sand"]
+}
 ```
 
 ## 注意事項
@@ -184,7 +289,8 @@ curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失
 - Topic 是公開的，使用不易猜測的名稱
 - 避免放敏感資訊
 - 免費版每天約 250 條限制
+- Windows 環境必須使用檔案方式發送 JSON
 
 ---
 
-**Generated by Skill Seekers** | ntfy Notification Skill
+**Generated by Skill Seekers** | ntfy Notification Skill | 測試驗證：2026-01-16
