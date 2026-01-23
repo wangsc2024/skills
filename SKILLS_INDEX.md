@@ -73,6 +73,7 @@
 | **docx** | Word, docx, 文件, 報告, 合約 | Word 文件 | 目錄 |
 | **pdf** | PDF, 合併PDF, OCR, 表單 | PDF 處理 | 目錄 |
 | **pptx** | PowerPoint, 簡報, slides, 投影片 | 簡報製作 | 目錄 |
+| **rental-contract-expert** | 租賃契約, 租約, 電費新制, 押金上限 | 房屋租賃專業規範與檢核 | 目錄+指令 |
 
 ## 🛠️ 工具與整合
 
