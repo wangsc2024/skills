@@ -86,8 +86,8 @@ vllm_data/
 *.rar
 *.7z
 
-# 報告輸出（可選）
-# reports/
+# 報告輸出
+reports/
 
 # 其他
 .cursor/

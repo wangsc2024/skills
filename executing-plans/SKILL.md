@@ -4,6 +4,7 @@ description: |
   Execute implementation plans through batched tasks with review checkpoints. Follows plans step-by-step, runs verifications, and pauses for feedback.
   Use when: implementing features from a written plan, following a task list, executing step-by-step instructions, or when user mentions 執行計畫, execute plan, 按照計畫, follow plan, 一步步做.
   Triggers: "execute plan", "follow plan", "執行計畫", "按照計畫", "開始實作", "run the plan"
+version: 1.0.0
 ---
 
 # Executing Implementation Plans

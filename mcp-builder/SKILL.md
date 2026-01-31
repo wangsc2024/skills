@@ -4,6 +4,7 @@ description: |
   Build Model Context Protocol (MCP) servers that enable Claude to interact with external services. Creates TypeScript or Python MCP servers with proper tool schemas, error handling, and testing.
   Use when: building MCP servers, integrating APIs, extending Claude's capabilities, or when user mentions MCP, Model Context Protocol, Claude擴展, external tools, MCP server.
   Triggers: "MCP", "Model Context Protocol", "MCP server", "Claude擴展", "external tools", "整合API"
+version: 1.0.0
 ---
 
 # MCP Server Builder

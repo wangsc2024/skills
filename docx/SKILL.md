@@ -4,6 +4,7 @@ description: |
   Read, create, and edit Word documents (.docx). Extract text, handle tracked changes, add comments, and build professional documents programmatically.
   Use when: working with Word files, document automation, contract review, report generation, or when user mentions Word, docx, 文件, document, 報告, report, 合約, contract.
   Triggers: "Word", "docx", "文件", "document", "報告", "word檔", "合約", "word文件"
+version: 1.0.0
 ---
 
 # Word Document (DOCX) Processing

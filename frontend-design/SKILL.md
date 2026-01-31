@@ -4,6 +4,7 @@ description: |
   Build distinctive, production-grade web interfaces with intentional design direction. Emphasizes unique aesthetics over generic AI patterns, covering typography, color, layout, and motion.
   Use when: creating websites, landing pages, dashboards, unique UI designs, or when user mentions 前端設計, web design, UI設計, 網頁設計, landing page, 介面設計, 獨特風格.
   Triggers: "web design", "UI design", "前端設計", "網頁設計", "landing page", "介面設計", "獨特風格", "不要太普通"
+version: 1.0.0
 ---
 
 # Frontend Design

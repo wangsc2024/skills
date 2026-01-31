@@ -4,6 +4,7 @@ description: |
   Draft professional internal communications including status reports, team updates, incident reports, and company newsletters. Provides structured templates and tone guidance.
   Use when: writing team updates, status reports, incident reports, FAQs, newsletters, or when user mentions 報告, status report, 進度報告, 週報, newsletter, incident report, 事件報告, 內部溝通.
   Triggers: "status report", "報告", "進度報告", "週報", "newsletter", "incident report", "事件報告", "內部溝通", "3P更新"
+version: 1.0.0
 ---
 
 # Internal Communications

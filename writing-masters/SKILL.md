@@ -4,6 +4,7 @@ description: |
   西方文學巨匠的寫作技巧。涵蓋海明威、奧威爾、史蒂芬金等大師的創作心法，包含冰山理論、極簡主義、敘事技巧與修訂方法。
   Use when: 提升寫作技巧、學習極簡風格、掌握 Show don't tell、改善對話敘事，or when user mentions 寫作, writing, 文字, 創作.
   Triggers: "寫作技巧", "writing", "寫作", "文字", "創作", "冰山理論", "極簡", "海明威", "史蒂芬金", "show don't tell"
+version: 1.0.0
 ---
 
 # 西方文學巨匠寫作技巧 Skill

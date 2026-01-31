@@ -4,6 +4,7 @@ description: |
   Tiptap is a headless, framework-agnostic rich text editor based on ProseMirror. Use for building custom editors, handling nodes/marks/extensions, and implementing rich text editing features.
   Use when: building rich text editors, creating WYSIWYG interfaces, custom editor nodes, collaborative editing, or when user mentions Tiptap, ProseMirror, rich text, WYSIWYG, editor, Node Views, 富文本, 編輯器, markdown editor.
   Triggers: "Tiptap", "ProseMirror", "rich text", "WYSIWYG", "editor", "Node Views", "富文本", "編輯器", "text editor", "markdown editor", "collaborative editing", "custom nodes"
+version: 1.0.0
 ---
 
 # Tiptap Skill

@@ -4,6 +4,7 @@ description: |
   Microsoft AutoGen 多代理對話框架。支援建立可協作的 AI 代理系統，實現複雜任務的自動化分解與執行。
   Use when: 建立多代理系統、設計代理協作流程、實作對話式 AI、自動化複雜任務，or when user mentions AutoGen, multi-agent, 多代理, 協作代理.
   Triggers: "AutoGen", "autogen", "multi-agent", "多代理", "agent chat", "協作代理", "ConversableAgent", "AssistantAgent", "UserProxyAgent", "GroupChat"
+version: 1.0.0
 ---
 
 # AutoGen Skill

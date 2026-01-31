@@ -4,6 +4,7 @@ description: |
   Create and manage Claude Code Skills. Generates SKILL.md files, validates skill structure, and provides templates for building custom skills.
   Use when: creating new skills, setting up skill directories, troubleshooting skill configuration, or when user mentions 建立skill, create skill, SKILL.md, 新增技能, skill模板.
   Triggers: "create skill", "建立skill", "SKILL.md", "新增技能", "skill模板", "自訂skill"
+version: 1.0.0
 ---
 
 # Skill Creator

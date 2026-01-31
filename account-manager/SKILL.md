@@ -4,6 +4,7 @@ description: |
   RBAC 權限管控設計指引。專注於角色權限模型設計、權限命名規範、存取控制實作。
   Use when: 設計 RBAC 模型、定義角色權限、實作存取控制、權限檢查邏輯，or when user mentions 權限, RBAC, 角色, 存取控制.
   Triggers: "權限管控", "RBAC", "角色權限", "存取控制", "access control", "permission", "role", "authorization"
+version: 1.0.0
 ---
 
 # 帳號管理與權限管控 Skill

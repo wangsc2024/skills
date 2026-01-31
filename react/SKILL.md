@@ -4,6 +4,7 @@ description: |
   React 前端框架開發指南。涵蓋元件開發、Hooks、狀態管理、JSX 語法等核心概念。
   Use when: 開發 React 應用、建立元件、管理狀態、使用 Hooks，or when user mentions React, component, hook, useState, JSX.
   Triggers: "React", "react", "component", "元件", "hook", "useState", "useEffect", "useContext", "useRef", "JSX", "props", "state", "前端開發", "單頁應用", "SPA"
+version: 1.0.0
 ---
 
 # React Skill

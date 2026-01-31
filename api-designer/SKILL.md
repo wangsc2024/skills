@@ -4,6 +4,7 @@ description: |
   Design RESTful and GraphQL APIs with proper structure, naming conventions, and documentation. Creates OpenAPI/Swagger specs, defines endpoints, and plans API versioning.
   Use when: designing APIs, creating API specifications, planning backend endpoints, documenting API contracts, or when user mentions API, REST, GraphQL, endpoint, OpenAPI, Swagger, API設計, 接口.
   Triggers: "API", "REST", "endpoint", "GraphQL", "OpenAPI", "Swagger", "設計API", "接口設計", "後端接口"
+version: 1.0.0
 ---
 
 # API Designer

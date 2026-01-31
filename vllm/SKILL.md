@@ -4,6 +4,7 @@ description: |
   vLLM 高效能 LLM 推理引擎部署與優化指南。支援 PagedAttention、Tensor Parallel、Continuous Batching 等技術，實現高吞吐量模型部署。
   Use when: 部署 LLM 推理服務、優化模型效能、設定 OpenAI 相容 API、配置分散式推理，or when user mentions vLLM, inference, serving, 推理, 部署.
   Triggers: "vLLM", "vllm", "inference", "serving", "PagedAttention", "推理", "部署", "模型部署", "LLM serving", "tensor parallel", "continuous batching", "quantization", "高吞吐量"
+version: 1.0.0
 ---
 
 # vLLM Skill

@@ -4,6 +4,7 @@ description: |
   Create sophisticated visual art and design pieces including posters, artwork, and graphic compositions. Outputs museum-quality PNG and PDF files.
   Use when: creating visual designs, posters, artistic compositions, graphic artwork, or when user mentions 海報, poster, 視覺設計, visual design, 藝術作品, artwork, 圖形設計.
   Triggers: "poster", "海報", "視覺設計", "visual design", "artwork", "藝術作品", "圖形設計", "做海報"
+version: 1.0.0
 ---
 
 # Canvas Design

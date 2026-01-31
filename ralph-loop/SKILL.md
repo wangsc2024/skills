@@ -4,6 +4,7 @@ description: |
   Ralph Loop 自主迭代開發工具。透過多輪迭代讓 AI 自主精進工作，直到達成完成標準。
   Use when: 需要反覆審查、測試驅動開發、多階段複雜任務、持續優化直到達標，or when user mentions ralph loop, 迭代, iteration, 自主精進.
   Triggers: "ralph loop", "ralph-loop", "迭代", "iteration", "自主精進", "持續改進", "多輪迭代", "完成承諾"
+version: 1.0.0
 ---
 
 # Ralph Loop 自主迭代開發工具

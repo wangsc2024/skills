@@ -4,6 +4,7 @@ description: |
   透過自然語言執行程式碼生成任務的萬用指令，可主動調用其他 Skills。
   Use when: 需要生成程式碼、解釋演算法、優化效能、重構程式、建立爬蟲、寫 API，or when user mentions 生成程式碼, code generation, 寫程式.
   Triggers: "codexrun", "生成程式碼", "code generation", "寫程式", "程式碼生成", "generate code", "寫一個", "建立程式"
+version: 1.0.0
 ---
 
 # codexrun

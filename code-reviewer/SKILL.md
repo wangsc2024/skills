@@ -5,6 +5,7 @@ description: |
   Use when: reviewing pull requests, auditing code quality, performing security reviews, checking code before deployment, or when user mentions code review, PR review, 程式碼審查, 審查, review, 檢查程式碼.
   Triggers: "review code", "code review", "PR review", "check my code", "審查", "review this", "程式碼檢查", "看一下這段程式"
 allowed-tools: Read, Grep, Glob
+version: 1.0.0
 ---
 
 # Code Reviewer

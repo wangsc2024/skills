@@ -4,6 +4,7 @@ description: |
   Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms.
   Use when: working with PDF files, extracting data, filling forms, merging PDFs, or when user mentions PDF, 合併PDF, extract, OCR, 表單, form filling.
   Triggers: "PDF", "pdf檔", "合併PDF", "extract text", "OCR", "表單", "fill form", "分割PDF"
+version: 1.0.0
 ---
 
 # PDF Processing Toolkit

@@ -4,6 +4,7 @@ description: |
   Create, edit, and analyze PowerPoint presentations (.pptx). Build slides programmatically, apply themes, add charts and images, and modify existing presentations.
   Use when: creating presentations, automating slide generation, analyzing presentation content, or when user mentions PowerPoint, pptx, 簡報, presentation, slides, 投影片.
   Triggers: "PowerPoint", "pptx", "簡報", "presentation", "slides", "投影片", "做簡報"
+version: 1.0.0
 ---
 
 # PowerPoint (PPTX) Processing

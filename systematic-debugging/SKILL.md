@@ -4,6 +4,7 @@ description: |
   Debug issues using a disciplined four-phase approach that prioritizes root cause investigation before attempting fixes. Prevents wasted time from guessing at solutions.
   Use when: encountering bugs, errors, exceptions, unexpected behavior, system failures, crashes, or when user mentions 除錯, debug, 找bug, 錯誤, error, exception, traceback, stack trace, 根因分析.
   Triggers: "debug", "bug", "error", "exception", "not working", "fails", "broken", "除錯", "錯誤", "為什麼不動", "出問題"
+version: 1.0.0
 ---
 
 # Systematic Debugging

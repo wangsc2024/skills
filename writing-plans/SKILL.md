@@ -4,6 +4,7 @@ description: |
   Create detailed implementation plans for multi-step features. Breaks work into bite-sized TDD tasks (2-5 minutes each) with exact file paths, code examples, and verification steps.
   Use when: planning new features, complex refactoring, multi-file changes, creating roadmaps, or when user mentions 計畫, plan, 規劃, 實作計畫, implementation plan, 步驟, 任務拆解.
   Triggers: "write plan", "create plan", "implementation plan", "計畫", "規劃", "怎麼實作", "步驟", "拆解任務"
+version: 1.0.0
 ---
 
 # Writing Implementation Plans

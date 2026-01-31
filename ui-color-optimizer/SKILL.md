@@ -4,6 +4,7 @@ description: |
   Optimize UI color schemes for accessibility, aesthetics, and brand consistency. Generates harmonious color palettes, checks WCAG contrast ratios, and provides CSS/Tailwind variables.
   Use when: designing color schemes, fixing contrast issues, creating dark mode, building design systems, or when user mentions 配色, color, 顏色, palette, dark mode, 深色模式, contrast, 對比度, WCAG.
   Triggers: "color", "配色", "顏色", "palette", "dark mode", "深色模式", "對比度", "WCAG", "調色盤"
+version: 1.0.0
 ---
 
 # UI Color Optimizer

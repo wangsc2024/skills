@@ -4,6 +4,7 @@ description: |
   透過自然語言執行 Claude Code Skills 的萬用指令，可主動調用其他 Skills。
   Use when: 需要執行多個 skill、自動化任務、智能派發工作，or when user mentions clauderun, 執行任務, run skill.
   Triggers: "clauderun", "執行任務", "run skill", "調用 skill", "智能執行", "自動執行"
+version: 1.0.0
 ---
 
 # clauderun

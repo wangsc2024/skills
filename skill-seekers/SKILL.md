@@ -4,6 +4,7 @@ description: |
   Skill Seekers 文檔工具 - 從文檔網站、GitHub 倉庫、PDF 自動生成 Claude AI skills。
   Use when: 建立 skill、爬取文檔、轉換 GitHub 專案為 skill，or when user mentions Skill Seekers, 建立 skill, 文檔轉換.
   Triggers: "Skill Seekers", "skill-seekers", "建立 skill", "文檔轉換", "scrape docs", "GitHub to skill"
+version: 1.0.0
 ---
 
 # Skill_Seekers

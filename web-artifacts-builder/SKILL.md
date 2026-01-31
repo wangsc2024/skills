@@ -4,6 +4,7 @@ description: |
   Build sophisticated multi-component frontend applications using React, TypeScript, Tailwind CSS, and shadcn/ui. Creates bundled single-file HTML artifacts.
   Use when: building complex web applications, interactive prototypes, multi-component React projects, or when user mentions shadcn, 複雜應用, web app, 前端專案, React專案, 打包HTML.
   Triggers: "shadcn", "web app", "複雜應用", "前端專案", "React專案", "打包HTML", "multi-component"
+version: 1.0.0
 ---
 
 # Web Artifacts Builder
