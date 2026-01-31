@@ -1,6 +1,9 @@
 ---
 name: vue-devtools
-description: Browser extension for debugging Vue.js applications
+description: |
+  Vue DevTools 瀏覽器擴充套件，用於調試 Vue.js 應用程式。支援元件檢視、狀態管理、路由和效能監控。
+  Use when: 調試 Vue 應用、檢視元件層級、監控 Vuex/Pinia 狀態、分析效能，or when user mentions Vue DevTools, Vue 調試, Vuex, Pinia.
+  Triggers: "Vue DevTools", "vue-devtools", "Vue 調試", "Vuex", "Pinia", "Vue 元件", "Vue debugging"
 version: 1.0.0
 ---
 

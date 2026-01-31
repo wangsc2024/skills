@@ -1,6 +1,9 @@
 ---
 name: account-manager
-description: 帳號管理與權限管控系統設計指引。協助建立登入登出流程、用戶 CRUD、RBAC 角色權限控制，並確保新功能納入權限管控。適用於設計認證系統、實作權限檢查、建立用戶管理介面時使用。
+description: |
+  RBAC 權限管控設計指引。專注於角色權限模型設計、權限命名規範、存取控制實作。
+  Use when: 設計 RBAC 模型、定義角色權限、實作存取控制、權限檢查邏輯，or when user mentions 權限, RBAC, 角色, 存取控制.
+  Triggers: "權限管控", "RBAC", "角色權限", "存取控制", "access control", "permission", "role", "authorization"
 ---
 
 # 帳號管理與權限管控 Skill

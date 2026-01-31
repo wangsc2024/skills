@@ -1,8 +1,0 @@
-{
-  "title": "Install library",
-  "content": "!pip install wandb --upgrade",
-  "code_samples": [],
-  "headings": [],
-  "url": "llms-txt#install-library",
-  "links": []
-}

@@ -1,8 +1,0 @@
-{
-  "title": "Augment the LLM with schema for structured output",
-  "content": "structured_llm = llm.with_structured_output(SearchQuery)",
-  "code_samples": [],
-  "headings": [],
-  "url": "llms-txt#augment-the-llm-with-schema-for-structured-output",
-  "links": []
-}

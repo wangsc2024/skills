@@ -1,6 +1,9 @@
 ---
 name: hackernews-ai-digest
-description: Fetch latest AI news from Hacker News API with full content and Chinese translation
+description: |
+  從 Hacker News API 獲取最新 AI 新聞，抓取完整內容並提供中文翻譯。
+  Use when: 獲取 AI 技術新聞、閱讀 HN 文章中文翻譯、追蹤 AI 行業動態，or when user mentions HN, Hacker News, AI news, 新聞摘要.
+  Triggers: "Hacker News", "HN", "AI news", "新聞摘要", "AI 新聞", "技術新聞", "hackernews"
 version: 2.0.0
 ---
 

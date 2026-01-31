@@ -1,6 +1,9 @@
 ---
 name: account-management-system
-description: 帳號管理與權限控管系統設計指引。協助建立登入登出流程、用戶 CRUD、RBAC 角色權限控制，並確保新功能納入權限管控。適用於設計認證系統、實作權限檢查、建立用戶管理介面時使用。
+description: |
+  帳號管理與權限控管系統設計指引。協助建立登入登出流程、用戶 CRUD、RBAC 角色權限控制，並確保新功能納入權限管控。
+  Use when: 設計認證系統、實作 JWT Token、建立 RBAC 權限、整合 Firebase Auth，or when user mentions 帳號管理, 登入登出, 權限控制, RBAC.
+  Triggers: "帳號管理", "account management", "登入登出", "JWT", "RBAC", "權限控制", "Firebase Auth", "用戶管理", "authentication", "authorization"
 version: 1.3.0
 ---
 

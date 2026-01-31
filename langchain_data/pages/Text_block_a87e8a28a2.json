@@ -1,8 +1,0 @@
-{
-  "title": "Text block",
-  "content": "text_block = {\n    \"type\": \"text\",\n    \"text\": \"Hello world\",\n}",
-  "code_samples": [],
-  "headings": [],
-  "url": "llms-txt#text-block",
-  "links": []
-}
