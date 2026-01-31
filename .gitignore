@@ -70,6 +70,25 @@ desktop.ini
 .env.local
 .env.*.local
 
+# Skill Seekers 爬取資料（中間產物）
+*_data/
+autogen_data/
+dspy_data/
+langchain_data/
+react_data/
+unsloth_data/
+vllm_data/
+
+# 備份與壓縮檔
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# 報告輸出（可選）
+# reports/
+
 # 其他
 .cursor/
 .cursorrules
@@ -77,5 +96,4 @@ desktop.ini
 .cursorrules.txt
 .cursorrules.yml
 .cursorrules.yaml
-.cursorrules.yml
 nul
