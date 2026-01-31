@@ -1,11 +1,27 @@
+# ===========================================
+# Claude Code Skills - .gitignore
+# ===========================================
+
+# -------------------------------------------
 # ntfy 通知暫存檔
+# -------------------------------------------
 ntfy_*.json
 payload.json
 success.json
 fail.json
 progress.json
 
+# -------------------------------------------
+# Claude Code / AI 工具
+# -------------------------------------------
+.claude/
+.claude_output/
+*.claude-session
+.anthropic/
+
+# -------------------------------------------
 # Python
+# -------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
@@ -26,49 +42,171 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
+
+# 虛擬環境
 .venv/
 venv/
 ENV/
+env/
+.env.bak/
 
+# Poetry / PDM / uv
+.pdm.toml
+.pdm-python
+poetry.lock
+uv.lock
+
+# PyPI 配置
+.pypirc
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# mypy / pyright / ruff
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyright/
+.ruff_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_metadata
+
+# -------------------------------------------
 # Node.js
+# -------------------------------------------
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.npm
-.yarn
+.npm/
+.yarn/
+.pnp.*
+.yarn-integrity
+.pnpm-debug.log*
 
-# IDE
+# -------------------------------------------
+# IDE / 編輯器
+# -------------------------------------------
+# VSCode (保留專案設定，忽略使用者設定)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains
 .idea/
-.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Vim / Neovim
 *.swp
 *.swo
 *~
+.netrwhist
+Session.vim
+.vim/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Eclipse
 .project
 .classpath
 .settings/
 
-# OS
+# Cursor
+.cursor/
+.cursorrules
+.cursorrules.*
+
+# -------------------------------------------
+# 作業系統
+# -------------------------------------------
+# macOS
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
+.AppleDouble
+.LSOverride
+Icon?
 
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# -------------------------------------------
 # 暫存與快取
+# -------------------------------------------
 *.log
 *.tmp
 *.temp
+*.bak
 *.cache
 .cache/
+tmp/
+temp/
 
-# 環境變數
+# -------------------------------------------
+# 環境變數與機密
+# -------------------------------------------
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.template
+*.local
+secrets/
+credentials/
+*.pem
+*.key
+
+# -------------------------------------------
+# 建置產出
+# -------------------------------------------
+build/
+dist/
+out/
+target/
+*.exe
+*.dll
+*.dylib
+
+# -------------------------------------------
+# 文件產出
+# -------------------------------------------
+*.pdf
+!docs/*.pdf
+site/
+_site/
 
 # Skill Seekers 爬取資料（中間產物）
 *_data/
@@ -97,3 +235,27 @@ reports/
 .cursorrules.yml
 .cursorrules.yaml
 nul
+# -------------------------------------------
+# 測試相關
+# -------------------------------------------
+test-results/
+playwright-report/
+.playwright/
+
+# -------------------------------------------
+# 其他
+# -------------------------------------------
+# 壓縮檔
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 資料庫
+*.db
+*.sqlite
+*.sqlite3
+
+# 大型檔案
+*.bin
+*.dat
