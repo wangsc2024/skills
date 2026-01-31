@@ -1,8 +1,0 @@
-{
-  "title": "Load environment variables",
-  "content": "dotenv.load_dotenv(\".env.local\")",
-  "code_samples": [],
-  "headings": [],
-  "url": "llms-txt#load-environment-variables",
-  "links": []
-}

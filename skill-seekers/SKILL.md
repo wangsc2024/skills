@@ -1,6 +1,10 @@
 ---
 name: skill-seekers
-description: Skill Seekers documentation tool - Use this skill when you need to create skills from documentation websites, scrape GitHub repositories, configure skill parameters, or learn how to build custom Claude AI skills
+description: |
+  Skill Seekers 文檔工具 - 從文檔網站、GitHub 倉庫、PDF 自動生成 Claude AI skills。
+  Use when: 建立 skill、爬取文檔、轉換 GitHub 專案為 skill，or when user mentions Skill Seekers, 建立 skill, 文檔轉換.
+  Triggers: "Skill Seekers", "skill-seekers", "建立 skill", "文檔轉換", "scrape docs", "GitHub to skill"
+version: 1.0.0
 ---
 
 # Skill_Seekers

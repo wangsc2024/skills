@@ -4,6 +4,7 @@ description: |
   Manage Git workflows, branching strategies, commit conventions, and pull request processes. Provides guidance on Git best practices, conflict resolution, and team collaboration.
   Use when: setting up Git workflows, writing commit messages, creating branches, managing PRs, resolving merge conflicts, or when user mentions git, commit, branch, merge, PR, pull request, 分支, 合併, 提交.
   Triggers: "git", "commit", "branch", "merge", "PR", "pull request", "分支", "合併", "提交訊息", "conflict"
+version: 1.0.0
 ---
 
 # Git Workflow

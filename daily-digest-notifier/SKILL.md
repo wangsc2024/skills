@@ -1,6 +1,10 @@
 ---
 name: daily-digest-notifier
-description: 每日摘要通知器 - 整合 Google Calendar 行事曆與 Todoist 待辦事項，透過 ntfy.sh 發送推播通知。當用戶說「今日摘要」、「通知我今天的行程」、「發送待辦提醒」、「行事曆通知」、「daily digest」、「send me today's schedule」時觸發。支援自訂查詢時間範圍、優先級過濾、自訂通知格式等功能。依賴 todoist skill 和 ntfy skill。
+description: |
+  每日摘要通知器 - 整合 Google Calendar 與 Todoist，透過 ntfy.sh 發送推播通知。
+  Use when: 發送每日摘要、整合行事曆與待辦、自動通知今日行程，or when user mentions 今日摘要, daily digest, 行事曆通知.
+  Triggers: "daily digest", "今日摘要", "每日摘要", "行事曆通知", "待辦提醒", "今天的行程", "today's schedule"
+version: 1.0.0
 ---
 
 # Daily Digest Notifier

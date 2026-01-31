@@ -1,6 +1,10 @@
 ---
 name: storytelling-masters
-description: 說故事大師的技藝。涵蓋安奈特·西蒙斯的影響力故事、乔西·杜乔爾特的商業簡報、乔貝爾的英雄旅程，以及繪本作家的敘事技巧。
+description: |
+  說故事大師的技藝。涵蓋安奈特·西蒙斯的影響力故事、杜乔爾特的商業簡報、坎貝爾的英雄旅程，以及繪本作家的敘事技巧。
+  Use when: 運用故事說服他人、設計商業簡報、建立情感連結、運用英雄旅程架構，or when user mentions 說故事, storytelling, 簡報, 敘事.
+  Triggers: "說故事", "storytelling", "簡報", "presentation", "敘事", "narrative", "英雄旅程", "hero's journey", "影響力"
+version: 1.0.0
 ---
 
 # 說故事大師技藝 Skill

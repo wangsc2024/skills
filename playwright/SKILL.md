@@ -1,6 +1,9 @@
 ---
 name: playwright
-description: Browser automation and end-to-end testing framework by Microsoft
+description: |
+  Microsoft Playwright 瀏覽器自動化與端對端測試框架。支援 Chromium、WebKit、Firefox 跨瀏覽器測試。
+  Use when: E2E 測試、瀏覽器自動化、網頁爬蟲、跨瀏覽器測試、視覺回歸測試，or when user mentions Playwright, E2E, 自動化測試.
+  Triggers: "Playwright", "playwright", "E2E", "端對端測試", "瀏覽器自動化", "browser automation", "web testing"
 version: 1.0.0
 ---
 

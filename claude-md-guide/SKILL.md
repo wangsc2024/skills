@@ -1,6 +1,9 @@
 ---
 name: claude-md-guide
-description: Guide for creating and configuring CLAUDE.md files for Claude Code projects
+description: |
+  CLAUDE.md 配置文件建立與設定指南。定義開發者身份、技術偏好和工作約束。
+  Use when: 建立 CLAUDE.md、設計配置架構、配置防御性規則、設置 slash 命令，or when user mentions CLAUDE.md, 配置, Claude Code 設定.
+  Triggers: "CLAUDE.md", "claude.md", "配置文件", "Claude Code 配置", "rules", "skills 配置", "commands"
 version: 2.0.0
 ---
 

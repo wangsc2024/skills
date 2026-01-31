@@ -4,6 +4,7 @@ description: |
   DSPy is Stanford's framework for programming and optimizing language model prompts. Use this skill when building LM-powered pipelines, optimizing prompts with teleprompters, creating modular AI programs with signatures and modules, evaluating and fine-tuning language model systems, or implementing retrieval-augmented generation (RAG) with DSPy.
   Use when: optimizing LLM prompts programmatically, building modular AI systems, implementing teleprompters, evaluating prompt performance, or when user mentions DSPy, teleprompter, signature, module, MIPRO, prompt optimization, 提示優化.
   Triggers: "DSPy", "teleprompter", "signature", "module", "MIPRO", "prompt optimization", "提示優化", "declarative LM", "LM programming", "prompt tuning"
+version: 1.0.0
 ---
 
 # DSPy Skill

@@ -1,10 +1,10 @@
 ---
 name: ntfy-notify
 description: |
-  透過 ntfy.sh 發送任務完成通知。當用戶說「完成後通知 xxx」、
-  「做完通知 xxx」、「完成後提醒 xxx」時，xxx 即為 ntfy topic，
-  任務完成後用 curl 發送通知到 ntfy.sh/xxx。
-  觸發關鍵字：通知、提醒、notify、完成後通知、做完通知、完成後提醒、處理完提醒
+  透過 ntfy.sh 發送任務完成通知。任務完成後用 curl 發送通知到 ntfy.sh。
+  Use when: 發送推播通知、任務完成提醒、跨裝置通知，or when user mentions 通知, notify, 提醒, ntfy.
+  Triggers: "ntfy", "通知", "notify", "提醒", "推播", "完成後通知", "做完通知", "處理完提醒"
+version: 1.0.0
 ---
 
 # ntfy 通知

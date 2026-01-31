@@ -1,8 +1,0 @@
-{
-  "title": "Instrument all PydanticAI agents",
-  "content": "Agent.instrument_all()",
-  "code_samples": [],
-  "headings": [],
-  "url": "llms-txt#instrument-all-pydanticai-agents",
-  "links": []
-}

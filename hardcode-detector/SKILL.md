@@ -5,6 +5,7 @@ description: |
   Use when: auditing code quality, reviewing for production readiness, checking for secrets, finding magic numbers, or when user mentions 硬編碼, hardcode, magic number, 寫死, 假資料, fake data, mock殘留, secrets洩漏.
   Triggers: "hardcode", "magic number", "寫死", "硬編碼", "fake", "mock", "stub", "secrets", "檢查寫死的值"
 allowed-tools: Read, Grep, Glob
+version: 1.0.0
 ---
 
 # Hardcode & Fake Implementation Detector

@@ -4,6 +4,7 @@ description: |
   Apply software architecture principles including Clean Architecture, SOLID, design patterns, and system design best practices. Guides architectural decisions, code organization, and scalability planning.
   Use when: designing systems, making architectural decisions, reviewing architecture, planning refactoring, discussing design patterns, or when user mentions 架構, architecture, SOLID, 設計模式, design pattern, clean architecture, 重構, 系統設計.
   Triggers: "architecture", "design pattern", "SOLID", "clean architecture", "架構設計", "系統設計", "怎麼設計", "結構", "分層"
+version: 1.0.0
 ---
 
 # Software Architecture

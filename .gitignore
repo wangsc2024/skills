@@ -208,6 +208,33 @@ target/
 site/
 _site/
 
+# Skill Seekers 爬取資料（中間產物）
+*_data/
+autogen_data/
+dspy_data/
+langchain_data/
+react_data/
+unsloth_data/
+vllm_data/
+
+# 備份與壓縮檔
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# 報告輸出
+reports/
+
+# 其他
+.cursor/
+.cursorrules
+.cursorrules.md
+.cursorrules.txt
+.cursorrules.yml
+.cursorrules.yaml
+nul
 # -------------------------------------------
 # 測試相關
 # -------------------------------------------

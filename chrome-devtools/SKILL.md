@@ -1,6 +1,9 @@
 ---
 name: chrome-devtools
-description: Chrome browser developer tools for web debugging and performance
+description: |
+  Chrome DevTools 瀏覽器開發者工具，用於網頁調試與效能分析。涵蓋 JavaScript 調試、網路請求分析、效能優化。
+  Use when: 調試 JavaScript、檢視 HTML/CSS、分析網路請求、效能優化、記憶體分析，or when user mentions DevTools, Chrome 調試, 開發者工具.
+  Triggers: "Chrome DevTools", "devtools", "開發者工具", "Chrome 調試", "JavaScript debugging", "網路面板", "效能分析", "console"
 version: 1.0.0
 ---
 

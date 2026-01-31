@@ -4,6 +4,7 @@ description: |
   Implement features and fix bugs using strict Test-Driven Development (TDD). Enforces RED-GREEN-REFACTOR cycle where tests are written before any production code.
   Use when: implementing new features, fixing bugs, refactoring code, writing tests, adding test coverage, or when user mentions TDD, 測試驅動, 寫測試, 單元測試, unit test, pytest, jest, 紅綠重構.
   Triggers: "write test first", "test driven", "TDD", "red green refactor", "failing test", "測試先行", "先寫測試"
+version: 1.0.0
 ---
 
 # Test-Driven Development (TDD)

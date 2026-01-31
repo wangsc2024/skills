@@ -4,6 +4,7 @@ description: |
   Generate React UI components, layouts, and design patterns. Creates accessible, responsive components with TypeScript, Tailwind CSS, and modern React patterns.
   Use when: building UI components, creating layouts, implementing design systems, prototyping interfaces, or when user mentions React, component, 元件, Tailwind, UI元件, Button, Modal, Form, 登入介面.
   Triggers: "React component", "UI component", "元件", "Tailwind", "Button", "Modal", "Form", "建立元件", "登入介面", "表單"
+version: 1.0.0
 ---
 
 # Frontend UI Tools

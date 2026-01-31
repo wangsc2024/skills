@@ -4,6 +4,7 @@ description: |
   Generate algorithmic art using p5.js and SVG. Creates generative patterns, fractals, noise-based visuals, geometric compositions, and interactive sketches.
   Use when: creating visual art, generative designs, creative coding, data visualization art, or when user mentions p5.js, SVG, 生成藝術, generative art, fractal, 碎形, 演算法藝術, creative coding.
   Triggers: "p5.js", "SVG", "生成藝術", "generative art", "fractal", "碎形", "演算法藝術", "creative coding", "視覺藝術"
+version: 1.0.0
 ---
 
 # Algorithmic Art Generator

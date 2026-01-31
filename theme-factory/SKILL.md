@@ -4,6 +4,7 @@ description: |
   Apply professional font and color themes to presentations, documents, and web artifacts. Provides 10 curated theme presets with cohesive palettes and typography.
   Use when: styling presentations, documents, web artifacts, or when user mentions 主題, theme, 風格, style, 套用主題, preset theme, 字體配色.
   Triggers: "theme", "主題", "風格", "style", "套用主題", "preset", "字體配色", "專業主題"
+version: 1.0.0
 ---
 
 # Theme Factory

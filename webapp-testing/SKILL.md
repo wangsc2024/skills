@@ -4,6 +4,7 @@ description: |
   Test web applications using Playwright automation. Creates end-to-end tests, performs visual testing, and automates browser interactions.
   Use when: testing web apps, writing E2E tests, automating browser tasks, validating UI functionality, or when user mentions Playwright, E2E, 端對端測試, browser test, 自動化測試, 網頁測試.
   Triggers: "Playwright", "E2E", "端對端測試", "browser test", "自動化測試", "網頁測試", "test web", "UI測試"
+version: 1.0.0
 ---
 
 # Web Application Testing

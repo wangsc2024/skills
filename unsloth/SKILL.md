@@ -4,6 +4,7 @@ description: |
   Unsloth is a library for 2-5x faster LLM fine-tuning with 80% less memory. Use this skill when fine-tuning language models (Llama, Mistral, Gemma, Qwen, DeepSeek, Phi), optimizing training with LoRA/QLoRA, handling long context (up to 500K tokens), multi-GPU training, vision model fine-tuning, or exporting to GGUF/vLLM formats.
   Use when: fine-tuning LLMs, optimizing training speed/memory, implementing LoRA/QLoRA, training vision models, long context training, or when user mentions Unsloth, fine-tune, LoRA, QLoRA, 微調, 訓練, model training, GRPO.
   Triggers: "Unsloth", "fine-tune", "fine-tuning", "LoRA", "QLoRA", "微調", "訓練", "model training", "GRPO", "long context", "vision fine-tuning", "memory optimization", "training acceleration"
+version: 1.0.0
 ---
 
 # Unsloth Skill
