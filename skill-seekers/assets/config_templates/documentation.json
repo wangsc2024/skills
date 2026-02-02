@@ -1,0 +1,21 @@
+{
+  "name": "react",
+  "description": "React 前端框架文件",
+  "base_url": "https://react.dev/",
+  "selectors": {
+    "main_content": "article, main, .content",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": ["/learn", "/reference"],
+    "exclude": ["/blog", "/community", "/versions"]
+  },
+  "categories": {
+    "getting_started": ["learn", "installation", "start", "tutorial"],
+    "api_reference": ["reference", "api", "hooks"],
+    "guides": ["learn", "guide"]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 200
+}

@@ -1,0 +1,68 @@
+{
+  "projects": {
+    "form-system": {
+      "name": "表單系統",
+      "description": "線上表單填寫與管理系統",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "document-system": {
+      "name": "公文系統",
+      "description": "公文簽核與管理系統",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "hr-system": {
+      "name": "人事系統",
+      "description": "人事資料與差勤管理",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "finance-system": {
+      "name": "財務系統",
+      "description": "財務會計管理系統",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "portal": {
+      "name": "入口網站",
+      "description": "企業入口網站",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "mobile-app": {
+      "name": "行動應用",
+      "description": "手機 App",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "api-service": {
+      "name": "API 服務",
+      "description": "後端 API 服務",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    },
+    "other": {
+      "name": "其他",
+      "description": "其他系統",
+      "path": "",
+      "repo": "",
+      "techStack": []
+    }
+  },
+  "relay": {
+    "url": "https://relay-o.oopdoo.org.ua/gun",
+    "prefix": "issue-tracker"
+  },
+  "defaults": {
+    "priority": "critical,high",
+    "outputDir": "./issue-reports"
+  }
+}

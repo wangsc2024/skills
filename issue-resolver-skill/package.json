@@ -1,0 +1,50 @@
+{
+  "name": "issue-resolver-skill",
+  "version": "1.1.0",
+  "description": "Automated issue diagnosis and resolution skill for Claude Code",
+  "main": "scripts/fetch-issues.js",
+  "scripts": {
+    "fetch": "node scripts/fetch-issues.js",
+    "process": "node scripts/process-issue.js",
+    "batch": "node scripts/batch-process.js",
+    "update": "node scripts/update-status.js",
+    "resolve": "node scripts/resolve-project.js",
+    "report": "node scripts/report-fix.js",
+    "fetch:critical": "node scripts/fetch-issues.js --priority critical,high",
+    "fetch:markdown": "node scripts/fetch-issues.js --format markdown",
+    "batch:all": "node scripts/batch-process.js --priority critical,high,medium,low"
+  },
+  "bin": {
+    "fetch-issues": "./scripts/fetch-issues.js",
+    "process-issue": "./scripts/process-issue.js",
+    "batch-process": "./scripts/batch-process.js",
+    "update-status": "./scripts/update-status.js",
+    "resolve-project": "./scripts/resolve-project.js",
+    "report-fix": "./scripts/report-fix.js"
+  },
+  "keywords": [
+    "gun",
+    "gundb",
+    "issue-tracker",
+    "diagnosis",
+    "debugging",
+    "claude",
+    "skill"
+  ],
+  "author": "wangsc2024",
+  "license": "MIT",
+  "dependencies": {
+    "gun": "^0.2020.1240"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangsc2024/relay.git"
+  },
+  "config": {
+    "relayUrl": "https://relay-o.oopdoo.org.ua/gun",
+    "nodePrefix": "issue-tracker"
+  }
+}
