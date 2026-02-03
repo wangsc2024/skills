@@ -2,9 +2,9 @@
 
 此索引幫助快速選擇正確的 Skill，並提供組合使用建議與自動觸發規則。
 
-> **更新時間:** 2026-01-31
-> **版本:** v4.0
-> **新增:** issue-resolver, skill-seekers (多版本), todoist, daily-digest-notifier, hackernews-ai-digest, ai-tech-digest, chrome-devtools, vue-devtools, playwright, claude-md-guide, rental-contract-guide, gemini-interactive-learning
+> **更新時間:** 2026-02-03
+> **版本:** v4.2
+> **新增:** pingtung-news（屏東新聞 MCP 服務）
 
 ---
 
@@ -162,10 +162,12 @@
 
 ---
 
-## 知識庫建構
+## 知識庫建構與查詢
 
 | Skill | 觸發詞 | 用途 | 類型 |
 |-------|--------|------|------|
+| **knowledge-query** | 查詢知識庫, 筆記查詢, RAG 查詢 | 個人知識庫查詢（PowerShell API） | 目錄 |
+| **code-assistant** | 程式輔助, 程式碼查詢, useCallback | 基於知識庫的程式開發輔助 | 目錄 |
 | **skill-creator** | create skill, 建立skill, SKILL.md | Skill 建立指南 | 目錄 |
 | **skill-seekers** | 從文件建立 Skill, 文件轉 Skill | 技術文件轉 AI 知識庫（通用版） | 目錄 |
 | **skill-seekers-claude-code** | 抓取文件, GitHub 倉庫分析 | Skill Seekers Claude Code 版本（含程式碼） | 目錄 |
@@ -178,6 +180,15 @@
 | Skill | 觸發詞 | 用途 | 類型 |
 |-------|--------|------|------|
 | **claude-md-guide** | CLAUDE.md, 配置文件, Claude Code 配置, rules, commands | CLAUDE.md 三層配置架構設計指南 | 目錄 |
+
+---
+
+## 政府與地方資訊
+
+| Skill | 觸發詞 | 用途 | 類型 |
+|-------|--------|------|------|
+| **pingtung-news** | 屏東新聞, 屏東縣政府, 周春米, 屏東縣府公告 | 屏東縣政府新聞查詢（MCP 即時服務） | 目錄 |
+| **pingtung-policy-expert** | 屏東政策, 屏東施政, 縣政方針 | 屏東縣政策與施政專家 | 目錄 |
 
 ---
 
@@ -348,6 +359,14 @@
 2. **daily-digest-notifier** - 整合行事曆 + 待辦 + 通知
 3. **ntfy-notify** - 任務完成推播通知
 
+### 查詢個人知識庫
+1. **knowledge-query** - 通用知識庫查詢（PowerShell API）
+2. **code-assistant** - 程式開發相關查詢
+
+### 查詢屏東縣政府新聞
+1. **pingtung-news** - 即時新聞查詢（MCP 服務）
+2. **pingtung-policy-expert** - 縣政政策分析
+
 ### 建立知識庫 / Skill
 1. **skill-seekers** - 從文件網站建立 Skill
 2. **skill-seekers-claude-code** - 完整程式碼版本
@@ -367,6 +386,7 @@
 | 問題診斷修復 | issue-resolver + systematic-debugging |
 | 組合任務執行 | clauderun + ntfy-notify |
 | 建構 RAG 系統 | rag + langchain + pinecone |
+| 個人知識庫查詢 | knowledge-query + code-assistant |
 | 多代理系統 | autogen + groq/mistral |
 | 模型微調後部署 | unsloth + vllm |
 | 富文本編輯器 | tiptap + react |
@@ -391,6 +411,8 @@
 ### 自動觸發
 
 Skills 會根據 description 中的關鍵字自動觸發。例如：
+- 提到 **查詢知識庫** 或 **筆記查詢** → 自動觸發 knowledge-query skill
+- 提到 **程式輔助** 或 **useCallback** → 自動觸發 code-assistant skill
 - 提到 **RAG** 或 **向量資料庫** → 自動觸發 rag skill
 - 提到 **DevTools** 或 **開發者工具** → 自動觸發 chrome-devtools skill
 - 提到 **Hacker News** 或 **HN** → 自動觸發 hackernews-ai-digest skill
@@ -398,6 +420,7 @@ Skills 會根據 description 中的關鍵字自動觸發。例如：
 - 提到 **租賃契約** 或 **租約** → 自動觸發 rental-contract-guide skill
 - 提到 **處理問題** 或 **修復bug** → 自動觸發 issue-resolver skill
 - 提到 **todoist** 或 **待辦事項** → 自動觸發 todoist skill
+- 提到 **屏東新聞** 或 **屏東縣政府** → 自動觸發 pingtung-news skill
 
 ---
 
@@ -428,6 +451,8 @@ skills/
 
 | 版本 | 日期 | 更新內容 |
 |-----|------|---------|
+| v4.2 | 2026-02-03 | 新增 pingtung-news（屏東新聞 MCP 服務）；新增「政府與地方資訊」分類 |
+| v4.1 | 2026-02-03 | 新增 knowledge-query（RAG 知識庫查詢）、code-assistant（程式輔助）；優化知識庫建構分類 |
 | v4.0 | 2026-01-31 | 新增 14 個 skills：issue-resolver, skill-seekers 多版本, todoist, daily-digest-notifier, hackernews-ai-digest, ai-tech-digest, chrome-devtools, vue-devtools, playwright, claude-md-guide, rental-contract-guide, gemini-interactive-learning |
 | v3.0 | 2026-01-31 | 新增自動化/任務執行類別、插件生態系統文件 |
 | v2.0 | 2026-01-10 | 新增 rloop、course-architect、ntfy-notify |
