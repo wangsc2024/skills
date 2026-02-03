@@ -1,0 +1,16 @@
+{
+  "project": "issue-tracker",
+  "projectName": "問題回報系統",
+  "processedAt": "2026-01-27T05:47:36.884Z",
+  "issueCount": 1,
+  "results": [
+    {
+      "issueId": "issue-1769492809885-1iuzteiuj",
+      "title": "增加服務範圍",
+      "priority": "medium",
+      "group": "system",
+      "diagnosis": "系統問題診斷",
+      "suggestions": []
+    }
+  ]
+}

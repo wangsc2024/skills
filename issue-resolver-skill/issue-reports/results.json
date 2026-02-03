@@ -1,0 +1,21 @@
+{
+  "processedAt": "2026-01-27T07:57:18.372Z",
+  "totalIssues": 1,
+  "successful": 1,
+  "failed": 0,
+  "results": [
+    {
+      "issueId": "issue-1769491628495-armwveofl",
+      "title": "增加系統",
+      "category": "data",
+      "priority": "high",
+      "success": true,
+      "reportFile": "issue-reports\\report-issue-1769491628495-armwveofl.txt",
+      "suggestions": [
+        "Review related code",
+        "Check recent changes"
+      ],
+      "affectedAreas": []
+    }
+  ]
+}

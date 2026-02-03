@@ -1,0 +1,116 @@
+============================================================
+ISSUE DIAGNOSIS REPORT
+============================================================
+
+Issue ID: issue-1769491628495-armwveofl
+Title: 增加系統
+Category: data
+Priority: HIGH
+Status: open
+Reporter: wsc
+Device: Windows/Chrome
+
+----------------------------------------
+DESCRIPTION:
+----------------------------------------
+將 D:\Source\count13 目錄中的計數系統納入可提交問題的系統
+
+----------------------------------------
+ANALYSIS:
+----------------------------------------
+Affected Areas: General
+
+Suggested Investigations:
+  1. Review related code
+  2. Check recent changes
+
+----------------------------------------
+TEST PLAN: Data Issue Test Plan
+----------------------------------------
+
+Steps:
+  1. Verify data integrity
+  2. Check sync status
+  3. Test CRUD
+  4. Review queries
+  5. Validate transforms
+
+Investigation Focus:
+  • Query for corruption
+  • Check timestamps
+  • Review validation
+  • Test sample data
+
+Common Fixes:
+  • Add validation
+  • Fix sync logic
+  • Correct queries
+  • Add transactions
+
+----------------------------------------
+CODE FIX EXAMPLES:
+----------------------------------------
+
+【validation】
+```
+// 資料驗證
+const Joi = require('joi');
+
+const userSchema = Joi.object({
+    name: Joi.string().min(2).max(100).required(),
+    email: Joi.string().email().required(),
+    age: Joi.number().integer().min(0).max(150)
+});
+
+function validateUser(data) {
+    const { error, value } = userSchema.validate(data);
+    if (error) {
+        throw new Error(`Validation failed: ${error.message}`);
+    }
+    return value;
+}
+```
+
+【transaction】
+```
+// 使用交易確保資料一致性
+async function transferFunds(fromId, toId, amount) {
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    
+    try {
+        await Account.updateOne({ _id: fromId }, { $inc: { balance: -amount } }, { session });
+        await Account.updateOne({ _id: toId }, { $inc: { balance: amount } }, { session });
+        await session.commitTransaction();
+    } catch (error) {
+        await session.abortTransaction();
+        throw error;
+    } finally {
+        session.endSession();
+    }
+}
+```
+
+----------------------------------------
+ACTION ITEMS:
+----------------------------------------
+[ ] Reproduce issue
+[ ] Identify root cause
+[ ] Implement fix
+[ ] Write tests
+[ ] Verify fix
+[ ] Update status
+
+----------------------------------------
+ROOT CAUSE:
+----------------------------------------
+(Document after investigation)
+
+----------------------------------------
+FIX IMPLEMENTED:
+----------------------------------------
+(Document the fix)
+
+============================================================
+Generated: 2026/1/27 下午3:57:18
+============================================================

@@ -1,0 +1,19 @@
+{
+  "project": "count13",
+  "projectName": "P2P計數器",
+  "processedAt": "2026-01-27T06:44:22.925Z",
+  "issueCount": 1,
+  "results": [
+    {
+      "issueId": "issue-1769496189013-jkxosbgvs",
+      "title": "增加區間統計功能",
+      "priority": "medium",
+      "group": "system",
+      "diagnosis": "系統問題診斷",
+      "suggestions": [
+        "檢查 React 元件狀態和生命週期",
+        "使用 React DevTools 檢查元件樹"
+      ]
+    }
+  ]
+}

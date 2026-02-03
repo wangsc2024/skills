@@ -1,0 +1,2 @@
+- 請檢查 D:\Source\skill_seeker 中 output 及 skills 目錄中的 skill 擇較新版的 skill 同步至本案
+- 請依本案的skill 更新 "C:\Users\user\.claude\" 及 C:\Users\user\.gemini\ 中的skill 並進行skill , SKILL_INDEX.md , CLAUDE.md ,GEMINI.md 修正與優化
