@@ -1,15 +1,26 @@
 ---
 name: ntfy-notify
+version: "2.0"
 description: |
-  透過 ntfy.sh 發送任務完成通知。任務完成後用 curl 發送通知到 ntfy.sh。
-  Use when: 發送推播通知、任務完成提醒、跨裝置通知，or when user mentions 通知, notify, 提醒, ntfy.
-  Triggers: "ntfy", "通知", "notify", "提醒", "推播", "完成後通知", "做完通知", "處理完提醒"
-version: 1.0.0
+  透過 ntfy.sh 發送任務完成通知。當用戶說「完成後通知 xxx」、
+  「做完通知 xxx」、「完成後提醒 xxx」時，xxx 即為 ntfy topic，
+  任務完成後使用 Python requests 發送通知到 ntfy.sh/xxx。
+  觸發關鍵字：通知、提醒、notify、完成後通知、做完通知、完成後提醒、處理完提醒
+triggers:
+  - "通知"
+  - "提醒"
+  - "notify"
+  - "完成後通知"
+  - "做完通知"
+  - "完成後提醒"
+  - "處理完提醒"
 ---
 
-# ntfy 通知
+# ntfy 通知 (ntfy Notification Skill)
 
 任務完成後透過 ntfy.sh 發送推播通知，讓你在手機或桌面即時收到任務狀態。
+
+**v2.0 更新**：改用 Python requests 發送通知，取代原有的 curl 方案。
 
 ## 什麼是 ntfy？
 
@@ -67,18 +78,21 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @payload.json https:/
 | Windows | ❌ 編碼問題 | ✅ 正常 |
 | 中文支援 | ⚠️ 可能亂碼 | ✅ 完美 |
 
+---
+
 ## JSON 欄位說明
 
 | 欄位 | 必填 | 說明 |
 |------|------|------|
 | `topic` | 是 | 通知頻道名稱 |
-| `message` | 是 | 通知內容（以正體中文為主） |
-| `title` | 否 | 通知標題（以正體中文為主） |
+| `message` | 是 | 通知內容 |
+| `title` | 否 | 通知標題（支援中文） |
 | `tags` | 否 | 標籤陣列，自動轉為 emoji |
 | `priority` | 否 | 優先級 1-5（5 最高） |
 | `click` | 否 | 點擊通知開啟的 URL |
 | `delay` | 否 | 延遲發送（如 "30m", "1h"） |
-| `attach` | ⛔ | **嚴禁使用**，不要附加任何檔案 |
+
+---
 
 ## 完整範例
 
@@ -89,7 +103,7 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @payload.json https:/
 {
   "topic": "wangsc2025",
   "title": "任務完成",
-  "message": "已在 ./my-react-app 建立 React 專案",
+  "message": "React project created at ./my-react-app",
   "tags": ["white_check_mark"]
 }
 ```
@@ -106,7 +120,7 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_success.json ht
 {
   "topic": "ci-alerts",
   "title": "測試失敗",
-  "message": "test_auth.py 有 3 個測試未通過",
+  "message": "3 tests failed in test_auth.py",
   "priority": 4,
   "tags": ["x", "test_tube"]
 }
@@ -124,7 +138,7 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https
 {
   "topic": "ci-alerts",
   "title": "測試通過",
-  "message": "46 個測試全數通過，覆蓋率 85%",
+  "message": "46 tests passed, 85% coverage",
   "tags": ["white_check_mark", "test_tube"]
 }
 ```
@@ -136,7 +150,7 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https
 {
   "topic": "ops-team",
   "title": "部署成功",
-  "message": "v2.1.0 已部署至正式環境",
+  "message": "v2.1.0 deployed to production",
   "tags": ["rocket", "white_check_mark"]
 }
 ```
@@ -148,7 +162,7 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https
 {
   "topic": "dev-team",
   "title": "PR 已合併",
-  "message": "PR #123 已合併至 main 分支",
+  "message": "PR #123 merged to main",
   "tags": ["white_check_mark"],
   "click": "https://github.com/user/repo/pull/123"
 }
@@ -160,8 +174,8 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https
 ```json
 {
   "topic": "ops-alerts",
-  "title": "緊急警報",
-  "message": "伺服器異常！CPU 使用率 100%",
+  "title": "緊急",
+  "message": "Server down! CPU usage 100%",
   "priority": 5,
   "tags": ["fire", "warning"]
 }
@@ -173,7 +187,7 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https
 ```json
 {
   "topic": "reminders",
-  "title": "定時提醒",
+  "title": "提醒",
   "message": "30 分鐘後記得休息",
   "delay": "30m"
 }
@@ -185,10 +199,10 @@ curl -H "Content-Type: application/json; charset=utf-8" -d @ntfy_fail.json https
 
 ```bash
 # 成功通知
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務完成","message":"任務已順利完成","tags":["white_check_mark"]}' ntfy.sh
+curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務完成","message":"描述","tags":["white_check_mark"]}' ntfy.sh
 
 # 失敗通知
-curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失敗","message":"執行過程發生錯誤","priority":4,"tags":["x"]}' ntfy.sh
+curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失敗","message":"描述","priority":4,"tags":["x"]}' ntfy.sh
 ```
 
 ## 實作流程（Claude 執行時）
@@ -212,13 +226,57 @@ curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失
 # rm ntfy_notify.json
 ```
 
+---
+
 ## 重要規則
 
-1. **嚴禁使用附件功能**：發送通知時絕對不要使用 `attach` 欄位，只發送純文字訊息
-2. **以正體中文為主**：通知標題與內容應以正體中文撰寫，但程式碼、路徑、版本號、專有名詞等技術術語可維持原文
-3. **必須使用 charset=utf-8**：確保中文正確顯示
-4. **必須使用 https://ntfy.sh**：完整 URL，不要只用 ntfy.sh
-5. **建議刪除暫存檔**：發送完成後清理 JSON 檔案
+1. **禁止使用附件功能**：發送通知時不要使用 `attach` 欄位，只發送純文字訊息
+2. **必須使用 charset=utf-8**：確保中文正確顯示
+3. **必須使用 https://ntfy.sh**：完整 URL，不要只用 ntfy.sh
+4. **建議刪除暫存檔**：發送完成後清理 JSON 檔案
+
+---
+
+## 快速範本
+
+### 成功通知（一行版）
+
+```python
+import requests; requests.post('https://ntfy.sh', json={'topic':'TOPIC','title':'任務完成','message':'DESCRIPTION','tags':['white_check_mark']}, headers={'Content-Type':'application/json'}, timeout=10)
+```
+
+### 失敗通知（一行版）
+
+```python
+import requests; requests.post('https://ntfy.sh', json={'topic':'TOPIC','title':'任務失敗','message':'DESCRIPTION','priority':4,'tags':['x']}, headers={'Content-Type':'application/json'}, timeout=10)
+```
+
+### 完整函數版
+
+```python
+import requests
+
+def notify(topic, title, message, tags=None, priority=None):
+    """發送 ntfy 通知"""
+    payload = {'topic': topic, 'title': title, 'message': message}
+    if tags:
+        payload['tags'] = tags
+    if priority:
+        payload['priority'] = priority
+
+    try:
+        r = requests.post('https://ntfy.sh', json=payload,
+                         headers={'Content-Type': 'application/json'},
+                         timeout=10)
+        return r.status_code == 200
+    except:
+        return False
+
+# 使用
+notify('wangsc2025', '任務完成', '簽辦公文專家 skill 已優化為 v2.0', ['white_check_mark'])
+```
+
+---
 
 ## 如何接收通知
 
@@ -232,6 +290,8 @@ curl -H "Content-Type: application/json" -d '{"topic":"TOPIC","title":"任務失
 3. **桌面通知**
    - 訪問 https://ntfy.sh/YOUR_TOPIC
    - 允許瀏覽器通知
+
+---
 
 ## 常用 Tags
 
@@ -260,7 +320,7 @@ Tags 會自動轉換為 emoji：
 {
   "topic": "TOPIC",
   "title": "任務完成",
-  "message": "任務描述",
+  "message": "DESCRIPTION",
   "tags": ["white_check_mark"]
 }
 ```
@@ -270,7 +330,7 @@ Tags 會自動轉換為 emoji：
 {
   "topic": "TOPIC",
   "title": "任務失敗",
-  "message": "錯誤描述",
+  "message": "DESCRIPTION",
   "priority": 4,
   "tags": ["x"]
 }
@@ -280,8 +340,8 @@ Tags 會自動轉換為 emoji：
 ```json
 {
   "topic": "TOPIC",
-  "title": "執行中",
-  "message": "目前進度：50%",
+  "title": "進行中",
+  "message": "Progress: 50%",
   "tags": ["hourglass_flowing_sand"]
 }
 ```
@@ -292,16 +352,7 @@ Tags 會自動轉換為 emoji：
 - 避免放敏感資訊
 - 免費版每天約 250 條限制
 - Windows 環境必須使用檔案方式發送 JSON
-- 訊息內容以正體中文為主，技術術語（如路徑、版本號、程式碼）可保留原文
-
-## 禁止事項
-
-- **嚴禁使用 `attach` 欄位**：不要在通知中附加任何檔案
-- **嚴禁使用 `filename` 欄位**：不要指定附件檔名
-- **嚴禁使用 `file` 欄位**：不要上傳檔案內容
-
-只發送純文字通知，保持簡潔。
 
 ---
 
-**Generated by Skill Seekers** | ntfy 通知 | 測試驗證：2026-01-16
+**Generated by Skill Seekers** | ntfy Notification Skill | 測試驗證：2026-01-16
