@@ -2,9 +2,9 @@
 
 此索引幫助快速選擇正確的 Skill，並提供組合使用建議與自動觸發規則。
 
-> **更新時間:** 2026-02-03
-> **版本:** v4.2
-> **新增:** pingtung-news（屏東新聞 MCP 服務）
+> **更新時間:** 2026-02-07
+> **版本:** v5.0
+> **新增:** context7, entropy-theory, llamaindex-ts, planning-with-files, qpdf, taiwan-cybersecurity, web-reader, government-document-expert, government-policy-report
 
 ---
 
@@ -48,7 +48,9 @@
 | **mistral** | Mistral AI, pixtral, embeddings | Mistral 模型 API 與 SDK | 目錄 |
 | **groq** | Groq, LPU, fast inference, Whisper | Groq 超快推理與語音轉文字 | 目錄 |
 | **rag** | RAG, 向量資料庫, embeddings, chunking | 檢索增強生成完整指南 | 目錄 |
+| **llamaindex-ts** | LlamaIndex, LlamaIndexTS, RAG TypeScript, LlamaParse | TypeScript LLM 應用框架（RAG、Agent、文件解析） | 目錄 |
 | **deep-learning** | CNN, RNN, LSTM, Transformer, Dropout | 深度學習核心架構與技術 | 目錄 |
+| **context7** | context7, 使用 context7, 查詢文檔, 查最新文件 | 即時查詢最新函式庫文檔與範例 | 目錄 |
 
 ---
 
@@ -60,6 +62,7 @@
 | **systematic-debugging** | debug, bug, error, 除錯, exception | 系統化除錯 | 目錄 |
 | **writing-plans** | 計畫, plan, 規劃, 步驟, 任務拆解 | 建立實作計畫 | 目錄 |
 | **executing-plans** | 執行計畫, follow plan, 按照計畫 | 執行實作計畫 | 目錄 |
+| **planning-with-files** | task plan, manus workflow, 三檔案模式, 任務規劃 | Manus 風格檔案規劃（解決上下文遺失） | 目錄 |
 | **software-architect** | 架構, architecture, SOLID, design pattern | 架構設計 | 目錄 |
 | **code-reviewer** | review, 審查, PR review, 檢查程式碼 | 程式碼審查 | 目錄 |
 | **hardcode-detector** | hardcode, 寫死, magic number, secrets | 硬編碼檢測 | 目錄 |
@@ -109,6 +112,7 @@
 |-------|--------|------|------|
 | **docx** | Word, docx, 文件, 報告, 合約 | Word 文件 | 目錄 |
 | **pdf** | PDF, 合併PDF, OCR, 表單 | PDF 處理 | 目錄 |
+| **qpdf** | qpdf, PDF split, PDF merge, PDF encrypt, 分割PDF | 命令行 PDF 操作工具（分割、合併、加密） | 目錄 |
 | **pptx** | PowerPoint, 簡報, slides, 投影片 | 簡報製作 | 目錄 |
 
 ---
@@ -139,6 +143,7 @@
 | **learning-mastery** | 學習方法, 記憶, 費曼技巧, 間隔複習, Anki | 楊大輝《深度學習的技術》五層學習框架 | 目錄 |
 | **atomic-habits** | 習慣, 原子習慣, 行為改變, 兩分鐘法則 | James Clear 原子習慣方法論 | 目錄 |
 | **course-architect** | 課程設計, 學習路徑, 教學設計, 評估標準 | 課程安排大師（靈感來自 Mr. Ranedeer） | 目錄 |
+| **entropy-theory** | 熵, entropy, 信息熵, 交叉熵, KL散度, 信息論 | 熵理論與應用（熱力學、信息論、機器學習） | 目錄 |
 
 ---
 
@@ -159,6 +164,14 @@
 | **ntfy-notify** | 通知, 提醒, 完成後通知, ntfy | 透過 ntfy.sh 發送任務完成通知 | 目錄 |
 | **todoist** | todoist, 待辦事項, todo, 任務, 今日任務 | Todoist API 整合（查詢、新增、完成任務） | 目錄 |
 | **daily-digest-notifier** | daily digest, 今日摘要, 行事曆通知, today's schedule | 整合 Google Calendar + Todoist + ntfy 每日摘要 | 目錄 |
+
+---
+
+## 資料擷取與處理
+
+| Skill | 觸發詞 | 用途 | 類型 |
+|-------|--------|------|------|
+| **web-reader** | 讀取網頁, 抓取網頁, fetch, scrape, requests | Python requests 網頁讀取（含 headers 設定） | 目錄 |
 
 ---
 
@@ -189,6 +202,8 @@
 |-------|--------|------|------|
 | **pingtung-news** | 屏東新聞, 屏東縣政府, 周春米, 屏東縣府公告 | 屏東縣政府新聞查詢（MCP 即時服務） | 目錄 |
 | **pingtung-policy-expert** | 屏東政策, 屏東施政, 縣政方針 | 屏東縣政策與施政專家 | 目錄 |
+| **government-document-expert** | 公文, 簽, 函, 簽呈, 公文撰寫, 屏府 | 台灣政府機關公文撰寫專家（屏東縣政府規範） | 目錄 |
+| **government-policy-report** | 施政總報告, 施政報告, 議會報告, 五箭齊發 | 地方政府施政總報告撰寫指南 | 目錄 |
 
 ---
 
@@ -197,6 +212,7 @@
 | Skill | 觸發詞 | 用途 | 類型 |
 |-------|--------|------|------|
 | **rental-contract-guide** | 租賃契約, 租約, 房東, 房客, 押金, 電費 | 台灣租賃契約專家（法規、電費新制、糾紛處理） | 目錄 |
+| **taiwan-cybersecurity** | 台灣資安, 資通安全管理法, TWCERT, NICS, 關鍵基礎設施 | 台灣資通訊安全法規、組織、威脅情報與防護 | 目錄 |
 
 ---
 
@@ -312,9 +328,11 @@
 
 ### 建構 RAG 系統
 1. **rag** - RAG 核心概念與最佳實踐
-2. **langchain** - LangChain 實作範例
-3. **pinecone:quickstart** - Pinecone 向量資料庫
-4. **mistral** 或 **groq** - Embeddings 與推理
+2. **langchain** - LangChain Python 實作範例
+3. **llamaindex-ts** - LlamaIndex TypeScript 實作範例
+4. **pinecone:quickstart** - Pinecone 向量資料庫
+5. **mistral** 或 **groq** - Embeddings 與推理
+6. **context7** - 即時查詢最新函式庫文檔
 
 ### 開發 AI 代理
 1. **langchain** - 單代理與工具整合
@@ -375,6 +393,18 @@
 ### 配置 Claude Code
 1. **claude-md-guide** - CLAUDE.md 三層架構設計
 2. **plugin-dev:create-plugin** - 建立 Claude Code 插件
+3. **planning-with-files** - Manus 風格持久化規劃
+
+### 撰寫政府公文
+1. **government-document-expert** - 公文撰寫（簽、函、公告）
+2. **government-policy-report** - 施政總報告撰寫
+
+### 處理 PDF 文件
+1. **pdf** - 一般 PDF 處理
+2. **qpdf** - 命令行 PDF 操作（分割、合併、加密）
+
+### 資安合規與防護
+1. **taiwan-cybersecurity** - 台灣資安法規與防護指南
 
 ---
 
@@ -385,7 +415,8 @@
 | 自動化開發迴圈 | rloop + test-driven-development |
 | 問題診斷修復 | issue-resolver + systematic-debugging |
 | 組合任務執行 | clauderun + ntfy-notify |
-| 建構 RAG 系統 | rag + langchain + pinecone |
+| 建構 RAG 系統（Python） | rag + langchain + pinecone |
+| 建構 RAG 系統（TypeScript） | llamaindex-ts + pinecone + context7 |
 | 個人知識庫查詢 | knowledge-query + code-assistant |
 | 多代理系統 | autogen + groq/mistral |
 | 模型微調後部署 | unsloth + vllm |
@@ -395,6 +426,11 @@
 | 前端調試工作流 | chrome-devtools + vue-devtools + playwright |
 | 帳號系統開發 | account-management-system + account-manager |
 | Gemini 學習網站 | gemini-interactive-learning + react + course-architect |
+| 複雜任務規劃 | planning-with-files + writing-plans + executing-plans |
+| 政府公文系統 | government-document-expert + government-policy-report |
+| PDF 批量處理 | pdf + qpdf |
+| 機器學習理論 | deep-learning + entropy-theory |
+| 網頁資料抓取 | web-reader + hackernews-ai-digest |
 
 ---
 
@@ -403,9 +439,11 @@
 ### 手動調用
 
 ```
-/rag /langchain /tiptap /react /vllm /atomic-habits /autogen
+/rag /langchain /llamaindex-ts /tiptap /react /vllm /atomic-habits /autogen
 /clauderun /codexrun /rloop /ntfy-notify /todoist /chrome-devtools
 /playwright /claude-md-guide /issue-resolver /hackernews-ai-digest
+/context7 /planning-with-files /qpdf /taiwan-cybersecurity /web-reader
+/government-document-expert /government-policy-report /entropy-theory
 ```
 
 ### 自動觸發
@@ -414,6 +452,8 @@ Skills 會根據 description 中的關鍵字自動觸發。例如：
 - 提到 **查詢知識庫** 或 **筆記查詢** → 自動觸發 knowledge-query skill
 - 提到 **程式輔助** 或 **useCallback** → 自動觸發 code-assistant skill
 - 提到 **RAG** 或 **向量資料庫** → 自動觸發 rag skill
+- 提到 **LlamaIndex** 或 **LlamaParse** → 自動觸發 llamaindex-ts skill
+- 提到 **context7** 或 **查最新文件** → 自動觸發 context7 skill
 - 提到 **DevTools** 或 **開發者工具** → 自動觸發 chrome-devtools skill
 - 提到 **Hacker News** 或 **HN** → 自動觸發 hackernews-ai-digest skill
 - 提到 **CLAUDE.md** 或 **配置文件** → 自動觸發 claude-md-guide skill
@@ -421,6 +461,13 @@ Skills 會根據 description 中的關鍵字自動觸發。例如：
 - 提到 **處理問題** 或 **修復bug** → 自動觸發 issue-resolver skill
 - 提到 **todoist** 或 **待辦事項** → 自動觸發 todoist skill
 - 提到 **屏東新聞** 或 **屏東縣政府** → 自動觸發 pingtung-news skill
+- 提到 **公文** 或 **簽呈** → 自動觸發 government-document-expert skill
+- 提到 **施政報告** 或 **議會報告** → 自動觸發 government-policy-report skill
+- 提到 **熵** 或 **entropy** 或 **交叉熵** → 自動觸發 entropy-theory skill
+- 提到 **台灣資安** 或 **資通安全管理法** → 自動觸發 taiwan-cybersecurity skill
+- 提到 **task plan** 或 **manus workflow** → 自動觸發 planning-with-files skill
+- 提到 **qpdf** 或 **分割PDF** → 自動觸發 qpdf skill
+- 提到 **讀取網頁** 或 **抓取網頁** → 自動觸發 web-reader skill
 
 ---
 
@@ -451,6 +498,7 @@ skills/
 
 | 版本 | 日期 | 更新內容 |
 |-----|------|---------|
+| v5.0 | 2026-02-07 | 全面審查並新增 9 個 skills：context7（即時文檔查詢）、entropy-theory（熵理論）、llamaindex-ts（TypeScript LLM 框架）、planning-with-files（Manus 規劃）、qpdf（PDF 命令行工具）、taiwan-cybersecurity（台灣資安）、web-reader（網頁讀取）、government-document-expert（公文撰寫）、government-policy-report（施政報告）；新增「資料擷取與處理」分類；清理異常檔案 |
 | v4.2 | 2026-02-03 | 新增 pingtung-news（屏東新聞 MCP 服務）；新增「政府與地方資訊」分類 |
 | v4.1 | 2026-02-03 | 新增 knowledge-query（RAG 知識庫查詢）、code-assistant（程式輔助）；優化知識庫建構分類 |
 | v4.0 | 2026-01-31 | 新增 14 個 skills：issue-resolver, skill-seekers 多版本, todoist, daily-digest-notifier, hackernews-ai-digest, ai-tech-digest, chrome-devtools, vue-devtools, playwright, claude-md-guide, rental-contract-guide, gemini-interactive-learning |
