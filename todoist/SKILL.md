@@ -19,9 +19,61 @@ export TODOIST_API_TOKEN="your_api_token"
 
 Token 取得：https://todoist.com/app/settings/integrations/developer
 
-## 快速使用
+## 快速使用（curl，推薦）
 
-### 查詢任務
+### 查詢今日 + 過期任務
+
+```bash
+curl -s "https://api.todoist.com/rest/v2/tasks?filter=today%20%7C%20overdue" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN"
+```
+
+### 自訂過濾器
+
+```bash
+# 未來 7 天
+curl -s "https://api.todoist.com/rest/v2/tasks?filter=7%20days" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN"
+```
+
+> 過濾器需 URL encode：`today | overdue` → `today%20%7C%20overdue`
+
+### 新增任務
+
+> **Windows 注意**：POST 請求的 inline JSON（`-d '{...}'`）在 Windows Bash 會失敗（error_code 42），
+> 必須先用 Write 工具建立 JSON 檔案，再用 `-d @file.json` 發送。GET 查詢不受影響。
+
+**Windows 環境（推薦）：**
+```bash
+# 步驟 1：用 Write 工具建立 JSON 檔案（例如 task.json）
+# {"content":"完成報告","due_string":"tomorrow","priority":4}
+
+# 步驟 2：用 curl 發送
+curl -s -X POST "https://api.todoist.com/rest/v2/tasks" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d @task.json
+
+# 步驟 3：刪除暫存檔
+rm task.json
+```
+
+**macOS/Linux 環境：**
+```bash
+curl -s -X POST "https://api.todoist.com/rest/v2/tasks" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"content":"完成報告","due_string":"tomorrow","priority":4}'
+```
+
+### 完成任務
+
+```bash
+curl -s -X POST "https://api.todoist.com/rest/v2/tasks/TASK_ID/close" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN"
+```
+
+## 快速使用（Python Script）
 
 ```bash
 # 今日 + 過期任務
@@ -29,19 +81,11 @@ python scripts/todoist.py list
 
 # 自訂過濾器
 python scripts/todoist.py list --filter "p1 | p2"
-python scripts/todoist.py list --filter "7 days"
-python scripts/todoist.py list --filter "#工作 & @重要"
-```
 
-### 新增任務
-
-```bash
+# 新增任務
 python scripts/todoist.py add "完成報告" --due "tomorrow" --priority 4
-```
 
-### 完成任務
-
-```bash
+# 完成任務
 python scripts/todoist.py complete <task_id>
 ```
 

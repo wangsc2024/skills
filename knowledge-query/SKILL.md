@@ -139,9 +139,22 @@ Invoke-RestMethod -Uri "http://localhost:3000/api/import" -Method POST -Body $bo
 3. **引用筆記**：結尾列出參考來源
 4. **誠實透明**：無結果時說明「知識庫中未找到」
 
+## 欄位分工（重要）
+
+知識庫有兩個內容欄位，用途不同：
+
+| 欄位 | 格式 | 用途 | 匯入時怎麼填 |
+|------|------|------|-------------|
+| `contentText` | Markdown / 純文字 | **全文搜尋索引**（FTS5 + 向量搜尋） | **必填**：放你的 Markdown 內容 |
+| `content` | Tiptap JSON | **前端編輯器渲染** | **不填**：後端從 contentText 自動生成 |
+
+**規則：匯入時只需填 `contentText`，`content` 由後端自動轉換。**
+
 ## 注意事項
 
 - **優先使用標題搜索**：比向量搜索更精確
 - **PowerShell 原生方法**：避免 JSON 轉義問題
-- **contentText 是純文字**：用於回答整合
-- **content 是 Tiptap JSON**：用於 UI 顯示
+- **contentText 是 Markdown/純文字**：用於搜尋索引和回答整合
+- **content 是 Tiptap JSON**：用於前端 UI 顯示，後端自動從 contentText 生成
+- **匯入內容放 `contentText`，不要填 `content`**
+- `source` 欄位僅接受：`manual`、`web`、`import`
