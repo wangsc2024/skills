@@ -1,3 +1,12 @@
+---
+name: knowledge-query
+description: |
+  透過對話查詢和探索個人知識庫。Claude 調用搜索 API 取得相關資料，再由 Claude 自己整合並回答。
+  Use when: 查詢個人知識庫、搜索筆記、取得知識庫內容，or when user mentions 知識庫, 筆記查詢, knowledge query.
+  Triggers: "知識庫", "筆記查詢", "knowledge query", "搜索筆記", "知識搜尋"
+version: 1.0.0
+---
+
 # Knowledge Query Skill
 
 透過對話查詢和探索個人知識庫。**Claude 調用搜索 API 取得相關資料，再由 Claude 自己整合並回答。**

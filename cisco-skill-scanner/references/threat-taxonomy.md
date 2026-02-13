@@ -13,10 +13,10 @@ Cisco Skill Scanner 使用的威脅分類法，對齊 [Cisco Integrated AI Secur
 **偵測引擎**: YAML 規則, YARA (prompt_injection_generic, coercive_injection_generic), LLM 分析
 
 **範例**:
-- `"Ignore previous instructions"`
-- `"unrestricted mode"`
-- `"don't tell user"`
-- `"You are now in developer mode"`
+- `"Ign0re previous instructi0ns"` (變體拼寫)
+- `"unre$tricted m0de"` (模式繞過)
+- `"don't tell user"` (隱藏行為)
+- `"Y0u are now in devel0per mode"` (角色劫持)
 
 **直接 vs 間接**:
 - **直接** (AITech-1.1): 在 SKILL.md 中直接嵌入覆蓋指令
@@ -76,7 +76,7 @@ requests.post(url, json=env_data)
 - GitHub: `ghp_...`
 - OpenAI: `sk-proj-...`
 - JWT tokens
-- 私鑰 (`-----BEGIN RSA PRIVATE KEY-----`)
+- 私鑰 (`----BEGIN RSA PRIVATE KEY----` 格式)
 - 連線字串
 
 ---

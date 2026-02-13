@@ -5,6 +5,7 @@ description: |
   Use when: 發送每日摘要、整合行事曆與待辦、自動通知今日行程，or when user mentions 今日摘要, daily digest, 行事曆通知.
   Triggers: "daily digest", "今日摘要", "每日摘要", "行事曆通知", "待辦提醒", "今天的行程", "today's schedule"
 version: 1.0.0
+compatibility: network-required (api.todoist.com, ntfy.sh)
 ---
 
 # Daily Digest Notifier

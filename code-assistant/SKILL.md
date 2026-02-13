@@ -1,3 +1,12 @@
+---
+name: code-assistant
+description: |
+  基於個人知識庫提供程式開發輔助。Claude Code 調用搜索 API 取得相關資料，再由 Claude 自己整合並回答。
+  Use when: 需要從知識庫查詢程式開發相關資料、搜索程式碼範例，or when user mentions 程式輔助, code assistant, 開發查詢.
+  Triggers: "程式輔助", "code assistant", "開發查詢", "程式碼搜索", "知識庫程式"
+version: 1.0.0
+---
+
 # Code Assistant Skill
 
 基於個人知識庫提供程式開發輔助。**Claude Code 調用搜索 API 取得相關資料，再由 Claude 自己整合並回答。**

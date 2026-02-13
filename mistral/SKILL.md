@@ -278,7 +278,7 @@ Use `view` to read specific reference files when detailed information is needed.
 2. Use streaming for real-time applications
 3. Implement proper error handling
 4. Cache embeddings for repeated queries
-5. Use function calling for structured outputs
+5. Leverage function calling for structured outputs
 
 ## Resources
 
