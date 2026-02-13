@@ -10188,7 +10188,7 @@ Source: https://docs.langchain.com/langsmith/custom-lifespan
 
 When deploying agents to LangSmith, you often need to initialize resources like database connections when your server starts up, and ensure they're properly closed when it shuts down. Lifespan events let you hook into your server's startup and shutdown sequence to handle these critical setup and teardown tasks.
 
-This works the same way as [adding custom routes](/langsmith/custom-routes). You just need to provide your own [`Starlette`](https://www.starlette.io/applications/) app (including [`FastAPI`](https://fastapi.tiangolo.com/), [`FastHTML`](https://fastht.ml/) and other compatible apps).
+This works the same way as [adding custom routes](/langsmith/custom-routes). You just need to provide your own [`Starlette`](https://www.starlette.io/applications/) app (including [`FastAPI`](https://fastapi.tiangolo.com/), [`FastHTML`](https://github.com/AnswerDotAI/fasthtml) and other compatible apps).
 
 Below is an example using FastAPI.
 
@@ -10221,7 +10221,7 @@ Once you have a LangGraph project, add the following app code:
 
 Source: https://docs.langchain.com/langsmith/custom-middleware
 
-When deploying agents to LangSmith, you can add custom middleware to your server to handle concerns like logging request metrics, injecting or checking headers, and enforcing security policies without modifying core server logic. This works the same way as [adding custom routes](/langsmith/custom-routes). You just need to provide your own [`Starlette`](https://www.starlette.io/applications/) app (including [`FastAPI`](https://fastapi.tiangolo.com/), [`FastHTML`](https://fastht.ml/) and other compatible apps).
+When deploying agents to LangSmith, you can add custom middleware to your server to handle concerns like logging request metrics, injecting or checking headers, and enforcing security policies without modifying core server logic. This works the same way as [adding custom routes](/langsmith/custom-routes). You just need to provide your own [`Starlette`](https://www.starlette.io/applications/) app (including [`FastAPI`](https://fastapi.tiangolo.com/), [`FastHTML`](https://github.com/AnswerDotAI/fasthtml) and other compatible apps).
 
 Adding middleware lets you intercept and modify requests and responses globally across your deployment, whether they're hitting your custom endpoints or the built-in LangSmith APIs.
 
@@ -10258,7 +10258,7 @@ Source: https://docs.langchain.com/langsmith/custom-routes
 
 When deploying agents to LangSmith Deployment, your server automatically exposes routes for creating runs and threads, interacting with the long-term memory store, managing configurable assistants, and other core functionality ([see all default API endpoints](/langsmith/server-api-ref)).
 
-You can add custom routes by providing your own [`Starlette`](https://www.starlette.io/applications/) app (including [`FastAPI`](https://fastapi.tiangolo.com/), [`FastHTML`](https://fastht.ml/) and other compatible apps). You make LangSmith aware of this by providing a path to the app in your `langgraph.json` configuration file.
+You can add custom routes by providing your own [`Starlette`](https://www.starlette.io/applications/) app (including [`FastAPI`](https://fastapi.tiangolo.com/), [`FastHTML`](https://github.com/AnswerDotAI/fasthtml) and other compatible apps). You make LangSmith aware of this by providing a path to the app in your `langgraph.json` configuration file.
 
 Defining a custom app object lets you add any routes you'd like, so you can do anything from adding a `/login` endpoint to writing an entire full-stack web-app, all deployed in a single Agent Server.
 

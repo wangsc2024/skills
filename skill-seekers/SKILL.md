@@ -6,6 +6,7 @@ description: |
   Use when: 建立 skill、爬取文檔、轉換 GitHub 專案為 skill、分析技術文件，or when user mentions Skill Seekers, 建立 skill, 文檔轉換, 抓取文件, 知識庫.
   Triggers: "Skill Seekers", "skill-seekers", "建立 skill", "文檔轉換", "scrape docs", "GitHub to skill", "抓取文件", "知識庫"
 version: 2.0.0
+compatibility: network-required
 ---
 
 # Skill Seekers
