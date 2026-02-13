@@ -5,6 +5,7 @@ description: |
   Use when: 獲取 AI 技術新聞、閱讀 HN 文章中文翻譯、追蹤 AI 行業動態，or when user mentions HN, Hacker News, AI news, 新聞摘要.
   Triggers: "Hacker News", "HN", "AI news", "新聞摘要", "AI 新聞", "技術新聞", "hackernews"
 version: 2.0.0
+compatibility: network-required (news.ycombinator.com API)
 ---
 
 # Hacker News AI 新闻摘要 Skill v2.0

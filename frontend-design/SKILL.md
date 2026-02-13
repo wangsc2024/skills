@@ -73,7 +73,7 @@ font-family: 'Neue Machina', sans-serif;
 
 ```css
 :root {
-  /* Perfect Fourth (1.333) */
+  /* P4 Fourth (1.333) */
   --text-xs: 0.75rem;    /* 12px */
   --text-sm: 0.875rem;   /* 14px */
   --text-base: 1rem;     /* 16px */
