@@ -349,7 +349,7 @@ DATABASE_URL=postgresql+asyncpg://user:pass@localhost/dbname
 FIREBASE_PROJECT_ID=your-project-id
 FIREBASE_API_KEY=your-api-key
 FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+FIREBASE_PRIVATE_KEY="<your-firebase-private-key-content>"
 FIREBASE_CLIENT_EMAIL=firebase-adminsdk@your-project.iam.gserviceaccount.com
 
 # SMTP 設定

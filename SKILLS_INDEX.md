@@ -2,8 +2,8 @@
 
 此索引幫助快速選擇正確的 Skill，並提供組合使用建議與自動觸發規則。
 
-> **更新時間:** 2026-02-07
-> **版本:** v6.1
+> **更新時間:** 2026-02-13
+> **版本:** v6.2
 > **路徑:** `D:\Source\skills\`
 
 ---
@@ -81,6 +81,7 @@
 | **chrome-devtools** | Chrome DevTools, 開發者工具, console | Chrome 瀏覽器調試、效能分析 |
 | **vue-devtools** | Vue DevTools, Vue 調試, Vuex, Pinia | Vue.js 應用調試與監控 |
 | **issue-resolver-skill** | 處理問題, 修復bug, 待辦, 回報修復 | 自動化問題診斷與修復 |
+| **cisco-skill-scanner** | Cisco Skill Scanner, Agent Skill 安全, skill 安全掃描, prompt injection 偵測, YARA | Cisco AI Defense Skill Scanner — Agent Skills 安全掃描（靜態分析 + 行為分析 + LLM 語義分析） |
 
 ---
 
@@ -510,6 +511,7 @@ D:\Source\skills\
 
 | 版本 | 日期 | 更新內容 |
 |-----|------|---------|
+| v6.2 | 2026-02-13 | 新增 cisco-skill-scanner（Cisco AI Defense Agent Skills 安全掃描） |
 | v6.1 | 2026-02-07 | 新增 Skill 依賴圖譜與 10 種組合模式 |
 | v6.0 | 2026-02-07 | 整合 skills：移除 account-manager、web-reader；合併 webapp-testing→playwright、skill-seekers-claude-chat/code→skill-seekers |
 | v5.4 | 2026-02-07 | 新增 ui-ux-pro-max 完整 UI/UX 設計智慧 |

@@ -5,6 +5,7 @@ description: |
   Use when: 管理待辦事項、查詢今日任務、新增刪除任務、過濾優先級，or when user mentions todoist, 待辦, todo, 任務.
   Triggers: "todoist", "待辦事項", "todo", "任務", "今日任務", "過期任務", "新增任務", "完成任務", "task"
 version: 1.0.0
+compatibility: network-required (api.todoist.com)
 ---
 
 # Todoist 待辦事項整合

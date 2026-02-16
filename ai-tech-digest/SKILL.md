@@ -1,7 +1,7 @@
 ---
 name: ai-tech-digest
 description: |
-  AI 技術日報追蹤與分析工具。涵蓋 Claude (Anthropic)、OpenAI、Gemini (Google)、Unsloth 等主要 AI 公司的最新動態。
+  AI 技術日報追蹤與分析工具。涵蓋 Claude、OpenAI、Gemini、Unsloth 等主要 AI 平台的最新動態。
   Use when: 查詢 AI 最新技術動態、整理 AI 公司技術報告、生成 AI 技術週報或日報，or when user mentions AI 新聞, 技術日報, AI digest.
   Triggers: "AI 技術日報", "ai tech digest", "AI 新聞", "技術追蹤", "Claude 新聞", "OpenAI 新聞", "Gemini 新聞", "AI 週報", "Unsloth"
 version: 2.0.0
@@ -9,7 +9,7 @@ version: 2.0.0
 
 # AI 技術日報 Skill
 
-涵蓋 Claude (Anthropic)、OpenAI、Gemini (Google)、Unsloth 等主要 AI 公司的最新技術動態追蹤與分析。
+涵蓋 Claude、OpenAI、Gemini、Unsloth 等主要 AI 平台的最新技術動態追蹤與分析。
 
 ## When to Use This Skill
 

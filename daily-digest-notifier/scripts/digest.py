@@ -127,6 +127,7 @@ class NtfyNotifier:
             payload["actions"] = actions
         
         try:
+            # Security: POST to ntfy.sh notification service only (declared in SKILL.md compatibility)
             response = requests.post(
                 Config.NTFY_URL,
                 json=payload,
