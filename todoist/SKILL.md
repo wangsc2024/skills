@@ -10,7 +10,9 @@ compatibility: network-required (api.todoist.com)
 
 # Todoist 待辦事項整合
 
-透過 REST API v2 管理 Todoist 任務。
+透過 API v1 管理 Todoist 任務。
+
+> ⚠️ **注意**：REST API v2（`/rest/v2/`）已於 2026 年初停止服務（HTTP 410 Gone），請務必使用 API v1（`/api/v1/`）。
 
 ## 環境設定
 
@@ -25,15 +27,18 @@ Token 取得：https://todoist.com/app/settings/integrations/developer
 ### 查詢今日 + 過期任務
 
 ```bash
-curl -s "https://api.todoist.com/rest/v2/tasks?filter=today%20%7C%20overdue" \
+curl -s "https://api.todoist.com/api/v1/tasks/filter?query=today%20%7C%20overdue" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN"
 ```
+
+> **回應格式**：任務包在 `results` 陣列中：`{"results": [...], "next_cursor": null}`
+> 取任務清單：`jq '.results'`
 
 ### 自訂過濾器
 
 ```bash
 # 未來 7 天
-curl -s "https://api.todoist.com/rest/v2/tasks?filter=7%20days" \
+curl -s "https://api.todoist.com/api/v1/tasks/filter?query=7%20days" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN"
 ```
 
@@ -50,7 +55,7 @@ curl -s "https://api.todoist.com/rest/v2/tasks?filter=7%20days" \
 # {"content":"完成報告","due_string":"tomorrow","priority":4}
 
 # 步驟 2：用 curl 發送
-curl -s -X POST "https://api.todoist.com/rest/v2/tasks" \
+curl -s -X POST "https://api.todoist.com/api/v1/tasks" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN" \
   -H "Content-Type: application/json; charset=utf-8" \
   -d @task.json
@@ -61,7 +66,7 @@ rm task.json
 
 **macOS/Linux 環境：**
 ```bash
-curl -s -X POST "https://api.todoist.com/rest/v2/tasks" \
+curl -s -X POST "https://api.todoist.com/api/v1/tasks" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"content":"完成報告","due_string":"tomorrow","priority":4}'
@@ -70,7 +75,7 @@ curl -s -X POST "https://api.todoist.com/rest/v2/tasks" \
 ### 完成任務
 
 ```bash
-curl -s -X POST "https://api.todoist.com/rest/v2/tasks/TASK_ID/close" \
+curl -s -X POST "https://api.todoist.com/api/v1/tasks/TASK_ID/close" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN"
 ```
 
@@ -99,14 +104,15 @@ import requests
 TOKEN = os.environ["TODOIST_API_TOKEN"]
 HEADERS = {"Authorization": f"Bearer {TOKEN}"}
 
-# 查詢任務
+# 查詢任務（回應包在 results 陣列中）
 def get_tasks(filter_query="today | overdue"):
     response = requests.get(
-        "https://api.todoist.com/rest/v2/tasks",
+        "https://api.todoist.com/api/v1/tasks/filter",
         headers=HEADERS,
-        params={"filter": filter_query}
+        params={"query": filter_query}
     )
-    return response.json()
+    data = response.json()
+    return data.get("results", [])
 
 # 新增任務
 def add_task(content, due_string=None, priority=1):
@@ -117,7 +123,7 @@ def add_task(content, due_string=None, priority=1):
         data["priority"] = priority  # 4=p1最高, 1=p4最低
     
     response = requests.post(
-        "https://api.todoist.com/rest/v2/tasks",
+        "https://api.todoist.com/api/v1/tasks",
         headers=HEADERS,
         json=data
     )
@@ -126,7 +132,7 @@ def add_task(content, due_string=None, priority=1):
 # 完成任務
 def complete_task(task_id):
     requests.post(
-        f"https://api.todoist.com/rest/v2/tasks/{task_id}/close",
+        f"https://api.todoist.com/api/v1/tasks/{task_id}/close",
         headers=HEADERS
     )
 ```
