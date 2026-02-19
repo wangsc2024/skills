@@ -2,17 +2,21 @@
 name: todoist
 description: |
   Todoist 待辦事項整合 - 查詢、新增、完成、刪除任務。支援專案、標籤、優先級、截止日期等完整功能。
-  Use when: 管理待辦事項、查詢今日任務、新增刪除任務、過濾優先級，or when user mentions todoist, 待辦, todo, 任務.
-  Triggers: "todoist", "待辦事項", "todo", "任務", "今日任務", "過期任務", "新增任務", "完成任務", "task"
-version: 1.0.0
+  Use when: 管理待辦事項、查詢今日任務、新增刪除任務、過濾優先級。
+  Triggers: todoist, 待辦事項, todo, 任務, 今日任務, 過期任務, 新增任務, 完成任務, task, to-do list, 待辦清單, to-do, 待辦
+allowed-tools: Bash, Read, Write
 compatibility: network-required (api.todoist.com)
+metadata:
+  version: "2.0.0"
+  cache-ttl: 30min
 ---
 
 # Todoist 待辦事項整合
 
-透過 API v1 管理 Todoist 任務。
+透過 Todoist API v1（`/api/v1/`）管理任務。
 
-> ⚠️ **注意**：REST API v2（`/rest/v2/`）已於 2026 年初停止服務（HTTP 410 Gone），請務必使用 API v1（`/api/v1/`）。
+> **注意**：舊版 REST API v2（`/rest/v2/`）已於 2026 年棄用（回傳 410 Gone）。
+> 所有端點已遷移至 `/api/v1/`。回應格式從直接陣列改為 `{ "results": [...], "next_cursor": ... }`。
 
 ## 環境設定
 
@@ -24,19 +28,26 @@ Token 取得：https://todoist.com/app/settings/integrations/developer
 
 ## 快速使用（curl，推薦）
 
-### 查詢今日 + 過期任務
+### 查詢今日 + 過期待辦（預設，推薦）
 
 ```bash
 curl -s "https://api.todoist.com/api/v1/tasks/filter?query=today%20%7C%20overdue" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN"
 ```
 
-> **回應格式**：任務包在 `results` 陣列中：`{"results": [...], "next_cursor": null}`
-> 取任務清單：`jq '.results'`
+> **注意**：預設查詢今日 + 過期任務，確保昨日未執行的任務不被遺漏。
+> 重複執行防護由過濾 B（`closed_task_ids`）承擔，而非限制查詢範圍。
+>
+> **重要**：API v1 的篩選端點為 `/tasks/filter?query=`，不是 `/tasks?filter=`。
+> 後者的 `filter` 參數會被靜默忽略，回傳全部任務。
 
 ### 自訂過濾器
 
 ```bash
+# 僅今日（不含過期）
+curl -s "https://api.todoist.com/api/v1/tasks/filter?query=today" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN"
+
 # 未來 7 天
 curl -s "https://api.todoist.com/api/v1/tasks/filter?query=7%20days" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN"
@@ -79,21 +90,49 @@ curl -s -X POST "https://api.todoist.com/api/v1/tasks/TASK_ID/close" \
   -H "Authorization: Bearer $TODOIST_API_TOKEN"
 ```
 
-## 快速使用（Python Script）
+### 新增任務評論
+
+> **Windows 注意**：POST 請求必須用 Write 工具建立 JSON 檔案，再用 `-d @file.json` 發送。
 
 ```bash
-# 今日 + 過期任務
-python scripts/todoist.py list
+# 步驟 1：用 Write 工具建立 comment.json
+# {"task_id":"TASK_ID","content":"評論內容"}
 
-# 自訂過濾器
-python scripts/todoist.py list --filter "p1 | p2"
+# 步驟 2：發送
+curl -s -X POST "https://api.todoist.com/api/v1/comments" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d @comment.json
 
-# 新增任務
-python scripts/todoist.py add "完成報告" --due "tomorrow" --priority 4
-
-# 完成任務
-python scripts/todoist.py complete <task_id>
+# 步驟 3：刪除暫存檔
+rm comment.json
 ```
+
+### 更新任務（優先級、截止日期等）
+
+> 用於失敗處理：降低優先級、重新排程到明天。
+
+> ⚠️ **週期性任務保護**：若任務 `due.is_recurring = true`，**不可設定 `due_string`**。
+> Todoist API 接收到 `due_string` 更新時，會清除週期性設定（`is_recurring` 變為 `false`），
+> 導致任務失去週期性。週期性任務失敗時，**僅降低 `priority`，不修改 `due_string`**。
+
+```bash
+# 步驟 1：用 Write 工具建立 update.json
+# 降低優先級（適用所有任務）：{"priority": 3}
+# 重新排程（僅限非週期性任務）：{"due_string": "tomorrow"}
+# 同時修改（僅限非週期性任務）：{"priority": 3, "due_string": "tomorrow"}
+
+# 步驟 2：發送
+curl -s -X POST "https://api.todoist.com/api/v1/tasks/TASK_ID" \
+  -H "Authorization: Bearer $TODOIST_API_TOKEN" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d @update.json
+
+# 步驟 3：刪除暫存檔
+rm update.json
+```
+
+---
 
 ## API 使用（Python）
 
@@ -104,8 +143,9 @@ import requests
 TOKEN = os.environ["TODOIST_API_TOKEN"]
 HEADERS = {"Authorization": f"Bearer {TOKEN}"}
 
-# 查詢任務（回應包在 results 陣列中）
-def get_tasks(filter_query="today | overdue"):
+# 查詢任務（注意：回應格式為 { "results": [...], "next_cursor": ... }）
+# API v1 篩選端點：/tasks/filter?query=  （不是 /tasks?filter=）
+def get_tasks(filter_query="today"):
     response = requests.get(
         "https://api.todoist.com/api/v1/tasks/filter",
         headers=HEADERS,
@@ -121,7 +161,7 @@ def add_task(content, due_string=None, priority=1):
         data["due_string"] = due_string
     if priority:
         data["priority"] = priority  # 4=p1最高, 1=p4最低
-    
+
     response = requests.post(
         "https://api.todoist.com/api/v1/tasks",
         headers=HEADERS,
@@ -162,25 +202,48 @@ def complete_task(task_id):
 | 2 | p3 | 🔵 | 中優先級 |
 | 1 | p4 | ⚪ | 低優先級 |
 
-## 任務物件結構
+## 回應格式
+
+### 列表查詢回應（GET /tasks/filter）
 
 ```json
 {
-  "id": "2995104339",
-  "content": "任務標題",
-  "description": "任務描述",
-  "project_id": "2203306141",
-  "priority": 4,
-  "due": {
-    "date": "2025-01-30",
-    "datetime": "2025-01-30T12:00:00Z",
-    "is_recurring": false
-  },
-  "labels": ["工作", "重要"],
-  "is_completed": false,
-  "url": "https://todoist.com/showTask?id=2995104339"
+  "results": [ ...任務物件陣列... ],
+  "next_cursor": null
 }
 ```
+
+> **重要**：任務列表在 `results` 欄位內，不是直接回傳陣列。使用 `jq '.results'` 或 `data["results"]` 取出。
+
+### 任務物件結構
+
+```json
+{
+  "id": "6fv24RhCvXv9hcvX",
+  "content": "任務標題",
+  "description": "任務描述",
+  "project_id": "6Hc6Wfh53pQwCpH5",
+  "priority": 4,
+  "due": {
+    "date": "2026-02-12",
+    "timezone": "Asia/Taipei",
+    "string": "every day at 11:00",
+    "lang": "zh",
+    "is_recurring": true,
+    "datetime": "2026-02-12T03:00:00.000000Z"
+  },
+  "labels": ["工作", "重要"],
+  "checked": false
+}
+```
+
+> **`due` 欄位說明：**
+> - `datetime`：帶時間的任務才有此欄位（UTC 格式）；全天任務此欄位為 `null`。
+>   例：本地 `11:00 +08:00` = `"2026-02-12T03:00:00.000000Z"`（UTC）
+> - `is_recurring`：`true` = 週期性任務（完成後自動生成下一個實例）；`false` = 一次性任務
+> - **時間過濾**：若 `datetime` 不為 null 且 `datetime > 當前 UTC 時間`，代表任務尚未到執行時間，應跳過此輪
+
+> **注意**：Task ID 格式從純數字改為英數混合字串（例：`"6fv24RhCvXv9hcvX"`）。
 
 ## 格式化輸出
 
@@ -188,11 +251,11 @@ def complete_task(task_id):
 def format_tasks(tasks):
     EMOJI = {4: "🔴", 3: "🟡", 2: "🔵", 1: "⚪"}
     lines = []
-    
+
     for task in sorted(tasks, key=lambda x: x.get("priority", 1), reverse=True):
         emoji = EMOJI.get(task.get("priority", 1), "⚪")
         content = task.get("content", "")
-        
+
         # 檢查過期
         due = task.get("due", {})
         overdue = ""
@@ -201,9 +264,9 @@ def format_tasks(tasks):
             due_date = datetime.strptime(due["date"][:10], "%Y-%m-%d").date()
             if due_date < datetime.now().date():
                 overdue = " ⏰(過期!)"
-        
+
         lines.append(f"{emoji} {content}{overdue}")
-    
+
     return "\n".join(lines)
 ```
 
@@ -214,6 +277,7 @@ def format_tasks(tasks):
 | 401 | Token 無效 | 檢查 TODOIST_API_TOKEN |
 | 403 | 權限不足 | 確認 Token 權限 |
 | 404 | 任務不存在 | 確認 task_id |
+| 410 | API 端點已棄用 | 改用 /api/v1/（REST v2 已停止服務） |
 | 429 | 請求過多 | 等待後重試（限制 450/15min） |
 
 ## 參考資料
