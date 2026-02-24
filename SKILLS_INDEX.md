@@ -64,6 +64,7 @@
 | **executing-plans** | 執行計畫, follow plan, 按照計畫 | 執行實作計畫 |
 | **planning-with-files** | task plan, manus workflow, 三檔案模式 | Manus 風格檔案規劃 |
 | **software-architect** | 架構, architecture, SOLID, design pattern | 架構設計 |
+| **arch-evolution** | ADR, 架構決策, 技術債, OODA, 架構治理, 漸進式改進, 依賴圖 | 架構演化追蹤器 — ADR 持久化、技術債追蹤、依賴圖補強、OODA 閉環調度 |
 | **code-reviewer** | review, 審查, PR review, 檢查程式碼 | 程式碼審查 |
 | **hardcode-detector** | hardcode, 寫死, magic number, secrets | 硬編碼檢測 |
 | **git-workflow** | git, commit, branch, merge, PR | Git 工作流程 |
