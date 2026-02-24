@@ -21,8 +21,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync, spawn } = require('child_process');
-
 // 載入配置
 function loadConfig(configPath) {
     const defaultPath = path.join(__dirname, '..', 'projects.json');

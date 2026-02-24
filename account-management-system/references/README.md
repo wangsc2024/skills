@@ -58,6 +58,9 @@ cp .env.example .env
 5. 將金鑰資訊填入 `.env` 檔案中的 Firebase 相關設定
 
 #### 必要環境變數
+
+> **WARNING**: 以下為範例佔位符，切勿將真實金鑰提交至版本控制。
+
 ```bash
 # Firebase 設定
 FIREBASE_PROJECT_ID=your-project-id

@@ -5,7 +5,9 @@ description: |
   Use when: 管理待辦事項、查詢今日任務、新增刪除任務、過濾優先級。
   Triggers: todoist, 待辦事項, todo, 任務, 今日任務, 過期任務, 新增任務, 完成任務, task, to-do list, 待辦清單, to-do, 待辦
 allowed-tools: Bash, Read, Write
-compatibility: network-required (api.todoist.com)
+compatibility:
+  network: true
+  endpoints: [api.todoist.com]
 metadata:
   version: "2.0.0"
   cache-ttl: 30min

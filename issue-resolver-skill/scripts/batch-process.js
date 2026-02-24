@@ -18,8 +18,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { spawn } = require('child_process');
-
 // Import local modules
 const { fetchIssues, CONFIG } = require('./fetch-issues.js');
 const { processIssue, analyzeIssue, generateTestPlan } = require('./process-issue.js');

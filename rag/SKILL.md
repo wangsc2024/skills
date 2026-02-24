@@ -155,7 +155,7 @@ vectorstore = Chroma.from_documents(
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 
-pc = Pinecone(api_key="your-api-key")
+pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
 index = pc.Index("your-index")
 
 vectorstore = PineconeVectorStore(

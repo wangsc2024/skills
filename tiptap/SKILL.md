@@ -368,7 +368,7 @@ const ydoc = new Y.Doc()
 const provider = new TiptapCollabProvider({
   appId: 'your-app-id',
   name: 'document-name',
-  token: 'your-jwt-token',
+  token: process.env.TIPTAP_JWT_TOKEN,
   document: ydoc,
 })
 

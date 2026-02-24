@@ -42,7 +42,7 @@ pip install unsloth
 
 **Example 2** (bash):
 ```bash
-docker run -d -e JUPYTER_PASSWORD="mypassword" \
+docker run -d -e JUPYTER_PASSWORD="$JUPYTER_PASSWORD" \
   -p 8888:8888 -p 2222:22 \
   -v $(pwd)/work:/workspace/work \
   --gpus all \

@@ -7,7 +7,9 @@ description: >
   library docs, API references, code examples, framework usage, setup/configuration steps. Also use when
   Claude's training data may be outdated for fast-moving libraries like Next.js, React, Vue, Tailwind,
   LangChain, etc. Supports specifying library versions (e.g., "Next.js 15", "React 18").
-compatibility: network-required (context7.com API)
+compatibility:
+  network: true
+  endpoints: [context7.com]
 ---
 
 # Context7 - Up-to-date Library Documentation

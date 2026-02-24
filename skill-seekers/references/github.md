@@ -129,14 +129,12 @@ GitHub API 有速率限制：
 - 已認證：5000 次/小時
 
 ```python
-# 使用 token 提高限制
+# 使用環境變數中的 token（事先以 export GITHUB_TOKEN=ghp_... 設定）
 import os
-os.environ["GITHUB_TOKEN"] = "ghp_your_token"
 
-# 或直接傳入
 scraper = GitHubScraper(
     repo="...",
-    github_token="ghp_your_token"
+    github_token=os.environ["GITHUB_TOKEN"]
 )
 
 # 檢查剩餘配額

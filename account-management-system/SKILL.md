@@ -335,6 +335,10 @@ class User(Base):
 
 ## 環境變數
 
+> **WARNING**: 以下為 `.env` 範例模板，所有憑證值皆為佔位符。
+> 切勿將真實的 PRIVATE_KEY、SECRET_KEY、密碼等提交至版本控制。
+> 請複製為 `.env` 檔案並填入真實值，確認 `.env` 已加入 `.gitignore`。
+
 ```bash
 # 應用程式設定
 APP_NAME="帳號管理系統"

@@ -213,14 +213,14 @@ from src.application.services.password_service import PasswordService
 
 def test_hash_password_returns_different_value():
     service = PasswordService()
-    password = "SecurePass123!"
+    password = "Test-P@ss-12345"
     hashed = service.hash(password)
     assert hashed != password
     assert len(hashed) > 20
 
 def test_verify_correct_password_returns_true():
     service = PasswordService()
-    password = "SecurePass123!"
+    password = "Test-P@ss-12345"
     hashed = service.hash(password)
     assert service.verify(password, hashed) is True
 

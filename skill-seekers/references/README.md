@@ -512,7 +512,7 @@ remove_config_source(name="team")
 fetch_config(
     git_url="https://github.com/mycompany/configs.git",
     config_name="react-custom",
-    token="ghp_your_token_here"
+    token=os.environ["GITHUB_TOKEN"]
 )
 ```
 

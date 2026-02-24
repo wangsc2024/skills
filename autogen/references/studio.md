@@ -50,11 +50,11 @@ WebSocket connections require the token to be passed as a query parameter (?toke
 Example 1 (yaml):
 ```yaml
 type: github
-jwt_secret: "your-secret-key" # keep secure!
+jwt_secret: "<REPLACE_WITH_JWT_SECRET>" # keep secure!
 token_expiry_minutes: 60
 github:
   client_id: "your-github-client-id"
-  client_secret: "your-github-client-secret"
+  client_secret: "<REPLACE_WITH_CLIENT_SECRET>"
   callback_url: "http://localhost:8081/api/auth/callback"
   scopes: ["user:email"]
 ```
@@ -62,11 +62,11 @@ github:
 Example 2 (yaml):
 ```yaml
 type: github
-jwt_secret: "your-secret-key" # keep secure!
+jwt_secret: "<REPLACE_WITH_JWT_SECRET>" # keep secure!
 token_expiry_minutes: 60
 github:
   client_id: "your-github-client-id"
-  client_secret: "your-github-client-secret"
+  client_secret: "<REPLACE_WITH_CLIENT_SECRET>"
   callback_url: "http://localhost:8081/api/auth/callback"
   scopes: ["user:email"]
 ```

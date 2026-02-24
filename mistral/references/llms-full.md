@@ -7001,7 +7001,7 @@ To use Codestral in Tabby, configure your model configuration in `~/.tabby/confi
 [model.completion.http]
 kind = "mistral/completion"
 api_endpoint = "https://api.mistral.ai"
-api_key = "secret-api-key"
+api_key = "<REPLACE_WITH_API_KEY>"
 ```
 
 You can check out [Tabby's documentation](https://tabby.tabbyml.com/docs/administration/model/#mistral--codestral) to learn more.  

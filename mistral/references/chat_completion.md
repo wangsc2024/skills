@@ -1175,7 +1175,7 @@ bash
 [model.completion.http]
 kind = "mistral/completion"
 api_endpoint = "https://api.mistral.ai"
-api_key = "secret-api-key"
+api_key = "<REPLACE_WITH_API_KEY>"
 bash
 
 mkdir -p ~/.openhands && echo '{"language":"en","agent":"CodeActAgent","max_iterations":null,"security_analyzer":null,"confirmation_mode":false,"llm_model":"mistral/devstral-small-2507","llm_api_key":"'$MISTRAL_API_KEY'","remote_runtime_resource_factor":null,"github_token":null,"enable_default_condenser":true}' > ~/.openhands-state/settings.json
