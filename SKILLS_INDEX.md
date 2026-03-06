@@ -68,6 +68,7 @@
 | **code-reviewer** | review, 審查, PR review, 檢查程式碼 | 程式碼審查 |
 | **hardcode-detector** | hardcode, 寫死, magic number, secrets | 硬編碼檢測 |
 | **git-workflow** | git, commit, branch, merge, PR | Git 工作流程 |
+| **git-worktree** | worktree, 工作樹, 平行開發, 並行開發, EnterWorktree | Git Worktree 並行開發與代理協作 |
 | **mcp-builder** | MCP, Model Context Protocol, Claude擴展 | MCP Server 建構 |
 
 ---
