@@ -10,6 +10,8 @@ description: |
 
 QPDF is a command-line program and C++ library for structural, content-preserving transformations on PDF files. It's particularly useful for splitting, merging, encrypting, and manipulating PDF documents.
 
+> ⚠️ **本機環境註記 (Windows，2026-09-03 實測)**：`qpdf` **未安裝**。除非使用者先安裝（見下方 Installation），否則改用已安裝的 **pypdf**（合併/分割/旋轉/加解密）或 **PyMuPDF**(`fitz`) 完成相同操作，參見 pdf skill。
+
 ## Installation
 
 ```bash

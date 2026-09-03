@@ -11,6 +11,17 @@ version: 1.0.0
 
 Create, edit, and analyze PowerPoint presentations programmatically.
 
+> ⚠️ **本機環境註記 (Windows，2026-09-03 實測)**：**LibreOffice、markitdown 未安裝**，勿使用下方 `libreoffice --headless` 轉檔指令。改用：
+> - PDF 匯出：**PowerPoint COM**（已驗證可用）
+> ```powershell
+> $ppt = New-Object -ComObject PowerPoint.Application
+> $p = $ppt.Presentations.Open("C:\path\deck.pptx", $true, $false, $false)
+> $p.SaveAs("C:\path\deck.pdf", 32)   # 32 = ppSaveAsPDF
+> $p.Close(); $ppt.Quit()
+> ```
+> - 投影片轉圖片（視覺 QA）：PDF 後用 **PyMuPDF**：`fitz.open(pdf)[i].get_pixmap(dpi=100).save('s.png')`
+> - 從零建立簡報另可用 **pptxgenjs**（npm 全域已裝）：`$env:NODE_PATH = (npm root -g); node script.js`
+
 ## Capabilities
 
 | Operation | Tool | Use Case |
