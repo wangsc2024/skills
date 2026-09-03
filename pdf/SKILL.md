@@ -11,6 +11,11 @@ version: 1.0.0
 
 Extract, create, manipulate, and analyze PDF documents.
 
+> ⚠️ **本機環境註記 (Windows，2026-09-03 實測)**：
+> - **可用**：`pypdf`、`pdfplumber`、`PyMuPDF`(`import fitz`)、`PIL`
+> - **未安裝，勿直接使用**：`reportlab`、tesseract 執行檔（`pytesseract` 套件在但無法運作）、`pdf2image`、poppler (`pdftotext`/`pdftoppm`/`pdfimages`)、`qpdf`、ghostscript
+> - 替代方案：文字/表格抽取用 pdfplumber 或 fitz；頁面轉圖用 fitz `get_pixmap(dpi=...)`（Read 工具無法直接渲染 PDF，同樣缺 poppler）；合併/分割/旋轉/加解密用 pypdf；**建立 PDF** 先 `pip install reportlab`，或以 python-docx 產 .docx 再經 Word COM 匯出 PDF（已驗證流程）；**OCR 本機不可行**（需先安裝 tesseract），直接告知使用者
+
 ## Capabilities
 
 | Operation | Tool | Use Case |

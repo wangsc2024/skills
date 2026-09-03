@@ -11,6 +11,18 @@ version: 1.0.0
 
 Comprehensive Word document operations through multiple specialized workflows.
 
+> ⚠️ **本機環境註記 (Windows，2026-09-03 實測)**：**pandoc、LibreOffice 未安裝**，勿使用下方 Pandoc 指令。改用：
+> - 文字抽取：**python-docx**（已安裝，含段落樣式與表格）
+> - .doc ↔ .docx 轉檔、匯出 PDF、接受追蹤修訂：**Word COM**（已驗證可用；Office 雖顯示「產品啟動失敗」，Word 自動化正常）
+> ```powershell
+> $word = New-Object -ComObject Word.Application; $word.Visible = $false; $word.DisplayAlerts = 0
+> $doc = $word.Documents.Open("C:\path\file.doc", $false, $true)
+> $doc.SaveAs2("C:\path\file.docx", 16)          # 16=docx, 0=doc
+> $doc.ExportAsFixedFormat("C:\path\out.pdf", 17) # 17=PDF
+> $doc.Close($false); $word.Quit()
+> ```
+> - PDF 轉頁面圖片：**PyMuPDF**（`import fitz`，已安裝）
+
 ## Capabilities
 
 | Operation | Tool | Use Case |
